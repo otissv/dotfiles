@@ -27,3 +27,9 @@ alias cd.='cd ..'
 alias cd..='cd ..'
 alias x='cd /mnt/files'
 alias a='atom .'
+
+
+alias gp='git push -u origin master'
+alias gs='git status'
+alias gd='git diff'
+alias ga='git add .'
