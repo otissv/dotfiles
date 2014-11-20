@@ -1,6 +1,7 @@
 #!/bin/sh
+
 lock() {
-    i3lock -n -ti /home/ninja/Wallpaper/death_star.jpg
+    i3lock -ti  /home/ninja/Wallpaers/death-star.png
 }
 
 case "$1" in
@@ -11,20 +12,18 @@ case "$1" in
         i3-msg exit
         ;;
     suspend)
-        gksu pm-suspend
+        lock && systemctl suspend
         ;;
     hibernate)
-        lock && dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Hibernate
+        lock && systemctl hibernate
         ;;
     reboot)
-        dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+        systemctl reboot
         ;;
     shutdown)
-        dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+        systemctl poweroff
         ;;
-    *)
-        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
-        exit 2
+        *)
 esac
 
 exit 0

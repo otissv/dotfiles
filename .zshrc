@@ -18,7 +18,6 @@ autoload -U promptinit
 promptinit
 prompt adam2
 
-
 # Alias
 alias r='source ~/.zshrc'
 alias l='ls -lah'
@@ -29,7 +28,7 @@ alias x='cd /mnt/files'
 alias a='atom .'
 
 
-alias gp='git push -u origin master'
+alias gp='git push origin master'
 alias gs='git status'
 alias gd='git diff'
 alias ga='git add .'

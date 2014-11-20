@@ -7,10 +7,15 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+
 # variables -------------------------------------------------------------------------------------------------------------------
+
+# modifier  keys
 set $mod Mod1
 set $acc Mod4
-set $exit /home/ninja/.i3/i3exit
+
+# set path to location of i3exit
+set $exit /home/ninja/dotfiles/.i3/i3exit
 
 
 # configuration file -----------------------------------------------------------------------------------------------------
@@ -25,7 +30,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # font
-font pango: Ubuntu Mono 12
+font pango: Ubuntu Mono  12
 
 # colors
 #class                            border       backgr       text            indicator
@@ -118,6 +123,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 # workspaces ---------------------------------------------------------------------------------------------------------------
 
 # cycle through workspaces
@@ -156,6 +162,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bar {
   status_command i3status
   position top
+
+  # uncomment to auto hide
   mode hide
   hidden_state hide
   modifier $mod
@@ -172,21 +180,24 @@ bar {
   }
 }
 
+
 # i3exit -------------------------------------------------------------------------------------------------------------------------
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-bindsym l exec --no-startup-id /home/ninja/.i3/i3exit lock, mode "default"
-bindsym e exec --no-startup-id i3exit logout, mode "default"
-bindsym s exec --no-startup-id i3exit suspend, mode "default"
-bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-bindsym r exec --no-startup-id i3exit reboot, mode "default"
-bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-# back to normal: Enter or Escape
-bindsym Return mode "default"
-bindsym Escape mode "default"
+mode "$mode_system" {
+  bindsym l exec --no-wstartup-id $exit lock, mode "default"
+  bindsym e exec --no-startup-id $exit logout, mode "default"    bindsym s exec --no-startup-id $exit suspend, mode "default"
+  bindsym h exec --no-startup-id $exit hibernate, mode "default"
+  bindsym r exec --no-startup-id $exit reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id $exit shutdown, mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
-bindsym $mod+Control+BackSpace mode "$mode_system"
+
+# menu
+bindsym $mod+Control+Delete mode "$mode_system"
+
 
 # autostart -------------------------------------------------------------------------------------------------------------------
 
@@ -196,13 +207,14 @@ exec --no-startup-id feh --bg-scale /home/ninja/Wallpaers/slim_dragon_arch.jpg
 # dropbox
 exec --nostartup-id dropbox
 
+
 # application ---------------------------------------------------------------------------------------------------------------
 
 # terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # demunu
-bindsym $acc+space exec --no-startup-id dmenu_run -i -p 'Arch Linux >>' -fn 'Ubuntu Mono:bold:pixelsize=28'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#1793D1'
+bindsym $acc+space exec --no-startup-id dmenu_run -i -p 'Arch Linux >>' -fn 'Ubuntu Mono:bold:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#1793D1'
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # chrome browser
