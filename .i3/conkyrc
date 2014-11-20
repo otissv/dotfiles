@@ -1,0 +1,47 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address.
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar$
+# wan = wlp4s0
+# lan = enp3s0f2
+
+ [{ "full_text" : " ${battery_percent}% " , "color" : ${if_match ${battery_percent}>16}"\#1793D1"${else}"\#ff0000"${endif} },
+  { "full_text" : " ${if_up tun0}${addr tun0}${else}VPN${endif}" , "color" : ${if_up tun0} "\#1793D1"${else}"\#9d9d9d"${endif} },
+  { "full_text" : "${if_up wlp4s0}${wireless_link_qual_perc wlp4s0}% @ ${wireless_essid wlp4s0} ${addr wlp4s0}${else} down${endif}" , "color" : ${if_up wlp4s0} "\#00ff00"${else}"\#9d9d9d"${endif} },
+  { "full_text" : " ${if_up enp3s0f2}${addr eth0}  ${totaldown eth0}  ${totalup enp3s0f2}${else}down${endif}" , "color" : ${if_up enp3s0f2} "\#1793D1"${else}"\#9d9d9d"${endif} },
+  { "full_text" : " ${execi 5 setxkbmap -query | awk '{if (NR==3) print $2}'}" , "color" : "\#1793D1" },
+  { "full_text" : " ${execi 5 date +"%a %d %b %H:%M"}", "color" : "\#ffffff" },
+  { "full_text" : "${if_match ${mpd_vol}<25} ${else}${if_match ${mpd_vol}<50} ${else} ${endif}${endif} ${mpd_vol}%" , "color" : "\#1793D1" }],
