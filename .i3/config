@@ -160,11 +160,11 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command $HOME/dotfiles/.i3/i3-conky-initscript.sh
   position top
 
   # uncomment to auto hide
-  mode hide
+  #mode hide
   hidden_state hide
   modifier $mod
 
@@ -186,7 +186,8 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 
 mode "$mode_system" {
   bindsym l exec --no-wstartup-id $exit lock, mode "default"
-  bindsym e exec --no-startup-id $exit logout, mode "default"    bindsym s exec --no-startup-id $exit suspend, mode "default"
+  bindsym e exec --no-startup-id $exit logout, mode "default"
+  bindsym s exec --no-startup-id $exit suspend, mode "default"
   bindsym h exec --no-startup-id $exit hibernate, mode "default"
   bindsym r exec --no-startup-id $exit reboot, mode "default"
   bindsym Shift+s exec --no-startup-id $exit shutdown, mode "default"
