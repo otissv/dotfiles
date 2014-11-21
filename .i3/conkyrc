@@ -1,3 +1,6 @@
+#/.i3/conkyrc
+# font-awesome icons required for icons
+
 out_to_x no
 own_window no
 out_to_console yes

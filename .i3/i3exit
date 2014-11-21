@@ -1,7 +1,8 @@
 #!/bin/sh
+#~/.i3/i3exit
 
 lock() {
-    i3lock -ti  /home/ninja/Wallpaers/death-star.png
+    i3lock -i  /home/ninja/Wallpaers/1788383.png
 }
 
 case "$1" in

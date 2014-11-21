@@ -1,3 +1,5 @@
+#~/.zshrc
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -18,15 +20,21 @@ autoload -U promptinit
 promptinit
 prompt adam2
 
+# Paths
+export PATH=$PATH:/usr/bin/
+
 # Alias
 alias r='source ~/.zshrc'
 alias l='ls -lah'
 alias c='claer'
 alias cd.='cd ..'
 alias cd..='cd ..'
+alias cd~='cd ~'
 alias x='cd /mnt/files'
-alias a='atom .'
+alias pi='pacman -Q'
 
+alias a='atom .'
+alias rg='ranger'
 
 alias gp='git push origin master'
 alias gs='git status'
