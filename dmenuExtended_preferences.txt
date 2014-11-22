@@ -15,17 +15,17 @@
     "menu_arguments": [
         "-i",
         "-nf",
-        "#888888",
+        "#ffffff",
         "-nb",
         "#1D1F21",
         "-sf",
-        "#ffffff",
+        "#1793D1",
         "-sb",
         "#1D1F21",
         "-fn",
         "-*-terminus-*-*-*-14-*-*-*-*-*-*-*",
         "-l",
-        "20"
+        "10"
     ],
     "scan_hidden_folders": false,
     "terminal": "xterm",

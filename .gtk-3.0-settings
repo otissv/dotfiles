@@ -1,0 +1,6 @@
+[Settings]
+gtk-application-prefer-dark-theme = false
+gtk-theme-name = FlatStudio
+gtk-fallback-icon-theme = gnome
+gtk-icon-theme-name = [icon theme name]
+gtk-font-name = "Ubuntu 12"

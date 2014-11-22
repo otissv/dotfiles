@@ -18,5 +18,8 @@ setxkbmap -layout gb,us -variant ,dvorak -option grp:shift_shift_toggle
 # numlockx must be installed
 numlockx &
 
+# hides mouse cursor when nit in use
+#unclutter &
+
 # launch i3
 exec i3

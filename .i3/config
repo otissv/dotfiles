@@ -18,7 +18,7 @@ set $acc Mod4
 
 # set path to location of i3exit
 set $exit $HOME/.i3/i3exit
-  set $wallpaper $HOME/Wallpaers/super_bat.png
+set $wallpaper $HOME/Wallpaers/super_bat.png
 
 
 # configuration file -----------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ bar {
 
 
 # i3exit -------------------------------------------------------------------------------------------------------------------------
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (x) shutdown
 
 mode "$mode_system" {
   bindsym l exec --no-startup-id $exit lock, mode "default"
@@ -193,7 +193,7 @@ mode "$mode_system" {
   bindsym s exec --no-startup-id $exit suspend, mode "default"
   bindsym h exec --no-startup-id $exit hibernate, mode "default"
   bindsym r exec --no-startup-id $exit reboot, mode "default"
-  bindsym Shift+s exec --no-startup-id $exit shutdown, mode "default"
+  bindsym x exec --no-startup-id $exit shutdown, mode "default"
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -206,13 +206,13 @@ bindsym $mod+Control+Delete mode "$mode_system"
 # autostart -------------------------------------------------------------------------------------------------------------------
 
 #wallpaer
-exec --nostartup-id feh --bg-scale $wallpaper
+exec --no-startup-id feh --bg-scale $wallpaper
 
 # dropbox
-exec --nostartup-id dropboxd
+exec --no-startup-id dropboxd
 
 # volume controls (alsamixer)
-exec --nostartup-id volumeicon
+exec --no-startup-id volumeicon
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
@@ -231,8 +231,31 @@ bindsym $acc+space exec --no-startup-id dmenu_extended_run -i -p 'Arch Linux >>'
 # chrome (web browser)
 bindsym $acc+g exec google-chrome-stable
 
-# atom editor (text editor)
-bindsym $acc+a exec atom
-
 # pcmanfm (file manager)
 bindsym $acc+p exec pcmanfm
+
+# dotfiles (user configuration)
+bindsym $mod+Control+d exec atom $HOME/dotfiles
+
+# alsamixer (sound mixer)
+bindsym $mod+Control+m exec i3-sensible-terminal -x alsamixer
+
+bindsym $mod+Control+w exec i3-sensible-terminal -x sudo wifi-menu wlp4s0
+
+# skype (voip)
+bindsym $acc+k exec skype
+
+# vlc (media player)
+bindsym $acc+v exec vlc
+
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used his favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+#exec i3-config-wizard

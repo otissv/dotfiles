@@ -35,6 +35,9 @@ alias pi='pacman -Q'
 
 alias a='atom .'
 alias rg='ranger'
+alias wm='sudo wifi-menu wlp4s0'
+alias wf='sudo netgui'
+alias sf='screenfetch'
 
 alias gp='git push origin master'
 alias gs='git status'
