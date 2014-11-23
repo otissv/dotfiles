@@ -22,9 +22,11 @@ prompt adam2
 
 # Paths
 export PATH=$PATH:/usr/bin/
+eval "$(rbenv init -)"
 
 # Alias
 alias r='source ~/.zshrc'
+alias z='nano ~/.zshrc'
 alias l='ls -lah'
 alias c='claer'
 alias cd.='cd ..'
