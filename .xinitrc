@@ -21,5 +21,7 @@ numlockx &
 # hides mouse cursor when nit in use
 #unclutter &
 
+numlockx &
+
 # launch i3
 exec i3
