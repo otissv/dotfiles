@@ -11,7 +11,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#keboard layout
+#keyboard layout
 setxkbmap -layout gb,us -variant ,dvorak -option grp:shift_shift_toggle
 
 # switch on numlock
@@ -20,8 +20,6 @@ numlockx &
 
 # hides mouse cursor when nit in use
 #unclutter &
-
-numlockx &
 
 # launch i3
 exec i3

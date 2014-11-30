@@ -2,7 +2,7 @@
 #~/.i3/i3exit
 
 lock() {
-    i3lock -i  /home/ninja/Wallpaers/1788383.png
+    i3lock -i  $HOME/.i3/lock.png
 }
 
 case "$1" in

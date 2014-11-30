@@ -12,13 +12,41 @@
 
 # variables -------------------------------------------------------------------------------------------------------------------
 
-# modifier  keys
+# Mod1 Alt key
 set $mod Mod1
+
+# Mod4 win (super) keyS
 set $acc Mod4
 
-# set path to location of i3exit
+# path to location of i3exit
 set $exit $HOME/.i3/i3exit
-set $wallpaper $HOME/Wallpaers/walpaper.jpg
+
+# path to dotfiles
+set $dot $HOME/dotfiles
+
+# path to wallpapers
+set $wallpaper $HOME/Wallpaper/randomise/*
+
+# wifi device
+set $wifi wlp4s0
+
+# resize px/ppt
+set $resize 1
+
+# accent color#D34836
+set $accent #1a5091
+
+# workspaces
+set $ws1 1 
+set $ws2 2 
+set $ws3 3 
+set $ws4 4 
+set $ws5 5 
+set $ws6 6 
+set $ws7 7 
+set $ws8 8 
+set $ws9 9 
+set $ws10 10 
 
 
 # configuration file -----------------------------------------------------------------------------------------------------
@@ -30,15 +58,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # font
-font pango: Ubuntu Mono  12
+font pango: Driod Sans, Icons 10
 
-# colors
+# colorsE0E0E0
 #class                   border    backgr    text       indicator
-client.focused           #424242   #424242   #cad0c4    #cad0c4
-client.focused_inactive  #2D2D2D   #151515   #2D2D2
+client.focused           #424242   #424242   #E0E0E0    #E0E0E0
+client.focused_inactive  #2D2D2D   #151515   #2D2D2D
 client.unfocused         #222222   #151515   #605e56
 client.urgent            #a5a5a5   #a5a5a5   #1E1E1E
 client.background        #161616
@@ -49,35 +77,8 @@ client.background        #161616
 #new window border size
 new_window pixel 3
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # kill focused window
-bindsym $mod+BackSpace kill
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $acc+BackSpace kill
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -88,16 +89,31 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Control+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -108,16 +124,16 @@ bindsym $mod+a focus parent
 # resize window (you can also use the mouse for that)
 mode "resize" {
 
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym j resize shrink width $resize px or $resize ppt
+  bindsym k resize grow height $resize px or $resize ppt
+  bindsym l resize shrink height $resize px or $resize ppt
+  bindsym semicolon resize grow width $resize px or $resize ppt
 
   # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width $resize px or $resize ppt
+  bindsym Down resize grow height $resize px or $resize ppt
+  bindsym Up resize shrink height $resize px or $resize ppt
+  bindsym Right resize grow width $resize px or $resize ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -129,33 +145,36 @@ bindsym $mod+r mode "resize"
 
 # workspaces ---------------------------------------------------------------------------------------------------------------
 
-# cycle through workspaces
-bindsym $acc+Left  workspace prev
-bindsym $acc+Right workspace next
+# move through workspaces
+bindsym $mod+Control+Left  workspace prev
+bindsym $mod+Control+Right workspace next
+
+# cyle through workspaces
+bindsym $mod+Tab workspace next
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 # i3bar -------------------------------------------------------------------------------------------------------------------------
@@ -178,8 +197,8 @@ bar {
     statusline #9D9D9D
 
     # class            border  backgrd text
-    focused_workspace  #2D2D2D #2D2D2D #ffffff
-    active_workspace   #2D2D2D #2D2D2D #cad0c4
+    focused_workspace  $accent $accent #E0E0E0﻿﻿
+    active_workspace   #9D9D9D #9D9D9D #161616
     inactive_workspace #161616 #1E1E1E #605e56
     urgent_workspace   #2d2d2d #2d2d2d #cad0c4
   }
@@ -208,41 +227,53 @@ bindsym $mod+Control+Delete mode "$mode_system"
 # autostart -------------------------------------------------------------------------------------------------------------------
 
 #wallpaer
-exec --no-startup-id feh --bg-scale $wallpaper
+exec --no-startup-id feh --randomize --bg-scale $wallpaper
 
 # dropbox
 exec --no-startup-id dropboxd
 
-# volume controls (alsamixer)
-exec --no-startup-id volumeicon
+# removeable storage
+exec --no-startup-id udiskie --tray
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+# skype
+exec --no-startup-id skype
 
 
-# application ---------------------------------------------------------------------------------------------------------------
+# system --------------------------------------------------------------------------------------------------------------------
 
-# terminal (default)
-bindsym $mod+Return exec i3-sensible-terminal
+# auto detect resolutions on all conneted displays
+bindsym $mod+Control+d exec i3-sensible-terminal -x $dot/.i3/detect_displays.sh
 
-# demunu (application launcher)
-bindsym $acc+space exec --no-startup-id dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Ubuntu Mono:bold:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#1793D1'
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# keyboard switch
+bindsym $mod+Control+g exec --no-startup-id setxkbmap gb
+bindsym $mod+Control+u exec --no-startup-id setxkbmap us
 
-# chrome (web browser)
-bindsym $acc+g exec google-chrome-stable
-
-# pcmanfm (file manager)
-bindsym $acc+p exec pcmanfm
+# sound card switch
+bindsym $mod+Control+s exec i3-sensible-terminal -x $HOME/.asound-switcher
 
 # dotfiles (user configuration)
-bindsym $mod+Control+d exec atom $HOME/dotfiles
+bindsym $acc+Control+d exec atom $dot
 
 # alsamixer (sound mixer)
 bindsym $mod+Control+m exec i3-sensible-terminal -x alsamixer
 
-bindsym $mod+Control+w exec i3-sensible-terminal -x sudo wifi-menu wlp4s0
+# wifi Menu
+bindsym $mod+Control+w exec i3-sensible-terminal -x sudo wifi-menu $wifi
+
+# top (system monitor)
+bindsym $mod+Control+t exec i3-sensible-terminal -x top
+
+
+# application ---------------------------------------------------------------------------------------------------------------
+
+# teminal (default terminal)
+bindsym $mod+Return exec i3-sensible-terminal
+
+# dmunu (application launcher)
+bindsym $acc+space exec --no-startup-id dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
+
+# pcmanfm (file manager)
+bindsym $acc+p exec pcmanfm
 
 # skype (voip)
 bindsym $acc+k exec skype
@@ -253,12 +284,27 @@ bindsym $acc+s exec steam
 # vlc (media player)
 bindsym $acc+v exec vlc
 
+# gimp (imiage processing)
+bindsym $acc+i exec gimp
+
+# libre oficffie (office)
+bindsym $acc+l exec libreoffice
+
+# clementine (music player)
+bindsym $acc+c exec clementine
+
+# youtube dl gui (youtube downlader)
+bindsym $acc+y exec youtube-dl-gui
+
+# chromium (web browser)
+bindsym $acc+b exec chromium
+
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used his favorite modifier (alt or windows)
 #
-# i3-config-wizard will not launch if there already is a config file
+# i3-config-wizard will not launch if t $here already is a config file
 # in ~/.i3/config.
 #
 # Please remove the following exec line:
