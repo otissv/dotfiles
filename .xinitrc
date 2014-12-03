@@ -14,10 +14,6 @@ fi
 #keyboard layout
 setxkbmap -layout gb,us -variant ,dvorak -option grp:shift_shift_toggle
 
-# switch on numlock
-# numlockx must be installed
-numlockx &
-
 # hides mouse cursor when nit in use
 #unclutter &
 

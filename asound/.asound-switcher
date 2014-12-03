@@ -6,7 +6,7 @@ echo -e "\nModule(s) being used for soundcards:"
 cat /proc/asound/modules
 
 # reset file
-rm -f ~/.asoundrc
+rm -f $HOME/.asoundrc
 
 echo -e "\nSound cards"
 aplay -l | grep card
@@ -16,8 +16,6 @@ aplay -l | grep card | cut -d":" -f1 > /tmp/tmp
 cat /tmp/tmp | uniq | sort > /tmp/tmp2
 cat /tmp/tmp2 > /tmp/tmp
 rm -f /tmp/tmp2
-
-
 
 # List sound cards available
 totcrd=`wc -l /tmp/tmp | cut -d" " -f1`
@@ -31,10 +29,12 @@ echo -e "\nEnter device number of selected card: \c"
 read dv
 
 # update .asoundrc
-touch ~/.asoundrc
-echo "defaults.pcm.card $sc" > ~/.asoundrc
-echo "defaults.pcm.device $dv" >> ~/.asoundrc
-echo "defaults.ctl.card $sc" >> ~/.asoundrc
+if [$sc == "1" ] then
+  touch ~/.asoundrc
+  echo "defaults.pcm.card $sc" > ~/.asoundrc
+  echo "defaults.pcm.device $dv" >> ~/.asoundrc
+  echo "defaults.ctl.card $sc" >> ~/.asoundrc
+fi
 
 # display info
 echo -e "\nNew default sound card:"

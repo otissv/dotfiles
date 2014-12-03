@@ -296,10 +296,11 @@ bindsym $acc+c exec clementine
 # youtube dl gui (youtube downlader)
 bindsym $acc+y exec youtube-dl-gui
 
-# chromium (web browser)
-bindsym $acc+b exec chromium
+# chrome (web browser)
+bindsym $acc+b exec google-chrome-stable
 
-
+# aton (text editor)
+bindsym $acc+a exec  atom ~/
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used his favorite modifier (alt or windows)
