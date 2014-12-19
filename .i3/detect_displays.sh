@@ -40,4 +40,4 @@ set -x
 ${CMD}
 set +x
 
-feh --randomize --bg-scale Wallpaper/randomise/*
+feh --randomize --bg-scale ~/wallpaper/randomise/*

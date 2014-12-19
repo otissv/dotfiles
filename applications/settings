@@ -1,0 +1,8 @@
+alsamixer,sound mixer
+~/.asound-switcher,sound-switcher
+blue-manager,bluetooth menu,blue-manager
+atom ~/dotfiles,configuration files
+~/dotfiles/read.md,help
+top,system monitor
+nvidia-settings,graphics settings
+wifi-menu,wifi

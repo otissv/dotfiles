@@ -1,0 +1,4 @@
+#/usr/share/gtk-2.0/.gtkrc
+gtk-icon-theme-name = "Numix-Circle"
+gtk-theme-name = "FlatStudioDark"
+gtk-font-name = "Droid Sans 11"
