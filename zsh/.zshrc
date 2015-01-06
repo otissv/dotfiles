@@ -30,6 +30,7 @@ amixer -c 0 cset name='IEC958 Playback Switch' on
 # Alias
 alias p='cd ~/projects'
 alias pc='cd ~/projects/express-starter'
+alias dot='cd ~/dotfiles'
 alias a='atom .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
@@ -99,7 +100,7 @@ function gb {
         git checkout $2;
         ;;
       -d)
-        git git branch -d $2;
+        git branch -d $2;
         ;;
       -l)
         git branch;
