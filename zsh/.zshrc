@@ -82,9 +82,8 @@ function ga {
       ;;
     *)
     git add $1;
-  esac
-  git add $1;
-  
+    ;;
+  esac  
 }
 
 function gc {
