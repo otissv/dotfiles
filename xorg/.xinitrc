@@ -16,7 +16,7 @@ xset -dpms
 xset s off
 
 #keyboard layout
-setxkbmap -layout us,gb -variant ,dvorak -option grp:shift_shift_toggle
+setxkbmap -layout us,gb -option grp:shift_shift_toggle
 
 # hides mouse cursor when nit in use
 #unclutter &
