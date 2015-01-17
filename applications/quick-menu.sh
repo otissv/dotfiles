@@ -135,7 +135,7 @@ function settingsOptions {
     exec terminator -x xrandr --output LVDS-0 --off --output HDMI-0 --auto
     ;;
     3)
-    exec bash $HOME/dotfiles/.i3/detect_displays.sh
+    exec terminator -x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-3 --auto --right-of LVDS-0
     ;;
     4)
     exec terminator -x xrandr  --output LVDS-0 --auto --output HDMI-0--auto

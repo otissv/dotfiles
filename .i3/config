@@ -36,8 +36,8 @@ set $resize 1
 # workspaces
 set $ws1  1 One 
 set $ws2  2 Two 
-set $ws3  3 Code 
-set $ws4  4 Files 
+set $ws3  3 Two 
+set $ws4  4 Code 
 set $ws5  5 Edit 
 set $ws6  6 Skype 
 set $ws7  7 Play 
@@ -46,13 +46,12 @@ set $ws9  9 Games 
 set $ws10 10 Win 
 
 # applications
-set $removable-storage        udiskie --tray
 set $cloud                    dropboxd
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $file-manager             pcmanfm
-set $browser                  google-chrome-stable
+set $browser                  chromium
 set $office                   libreoffice
 set $torrent                  transmission-gtk
 set $video                    vlc
@@ -66,7 +65,7 @@ set $text-editor              scribes
 set $code-editor              atom
 set $cddvd-burner             silicon
 
-# sett
+# set
 set $read                     $dot-path/read.md
 set $sound-card               $terminal-x bash $HOME/.asound-switcher
 set $config                   $text-editor $dot-path
@@ -84,11 +83,10 @@ set $keyboard-layout2         gb
 
 
 # application assignments ------------------------------------------------------------------------------------
-assign [class="^Pcmanfm"]            $ws4
+assign [class="^Pcmanfm"]            $ws3
 assign [class="libreoffice"]         $ws5
 assign [class="^Gimp$"]              $ws5
 assign [class="^Inkscape"]           $ws5
-assign [class="^Atom$"]              $ws3
 assign [class="^Youtube-dl-gui"]     $ws8
 assign [class="^Transmission-gtk"]   $ws8
 assign [class="^Vlc"]                $ws7
@@ -363,9 +361,6 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 # autostart -------------------------------------------------------------------------------------------------------------------
 exec --no-startup-id $wallpaper
 exec --no-startup-id $cloud
-exec --no-startup-id $removable-storage
-exec --no-startup-id $voip
-
 
 # application ---------------------------------------------------------------------------------------------------------------
 bindsym $mod+Return exec $terminal

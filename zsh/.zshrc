@@ -36,13 +36,14 @@ alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
 alias fm='pcmanfm'
 alias sfm='sudo pcmanfm'
-alias http='httpster'
-
 alias rc='clear && source ~/.zshrc'
 alias c='clear'
 alias r='source ~/.zshrc'
 alias z='nano ~/.zshrc'
 alias l='ls -lah'
+alias ld='ls -l | egrep "^d"'
+alias lf="ls -l | egrep -v '^d'"
+alias lwd='ls -d */'
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
@@ -51,14 +52,12 @@ alias j='journalctl'
 alias qm='~/dotfiles/applications/quick-menu.sh'
 alias mr='sudo nano /etc/pacman.d/mirrorlist'
 alias lg='sudo nano /etc/locale.gen'
-alias h 'nano /etc/hostname'
-alias f 'sudo nano/etc/fstab'
+alias h='nano /etc/hostname'
+alias fs= 'sudo nano/etc/fstab'
 
 alias rm='trash-put'
 alias tl='trash-list'
-alias tr='restore-trash'
-
-
+alias rt='restore-trash'
 
 function tc {
   touch $1
@@ -77,14 +76,14 @@ alias gh='git push heroku master'
 
 function ga {
   case $1 in
-    -m)
+    -c)
       git add $3;
       git commit -m $2;
       ;;
     *)
     git add $1;
     ;;
-  esac  
+  esac
 }
 
 function gc {
@@ -121,8 +120,8 @@ function gb {
         echo -e "gb -v\tsee the last commit on each branch"
         echo -e "\n* beside a branch name indicates the branch as the   currently checkour branch"
         echo "\n~/.zshrc"
-        ;; 
-    esac   
+        ;;
+    esac
 }
 
 # clear console
@@ -142,7 +141,7 @@ function pr {
 
 #
 function crm {
-  google-chrome-stable $1 
+  chromium $1
 }
 
 #Vagrant aliases
