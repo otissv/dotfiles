@@ -51,7 +51,7 @@ set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $file-manager             pcmanfm
-set $browser                  chromium
+set $browser                  google-chrome-stable
 set $office                   libreoffice
 set $torrent                  transmission-gtk
 set $video                    vlc
@@ -83,7 +83,6 @@ set $keyboard-layout2         gb
 
 
 # application assignments ------------------------------------------------------------------------------------
-assign [class="^Pcmanfm"]            $ws3
 assign [class="libreoffice"]         $ws5
 assign [class="^Gimp$"]              $ws5
 assign [class="^Inkscape"]           $ws5

@@ -53,8 +53,10 @@ alias qm='~/dotfiles/applications/quick-menu.sh'
 alias mr='sudo nano /etc/pacman.d/mirrorlist'
 alias lg='sudo nano /etc/locale.gen'
 alias h='nano /etc/hostname'
-alias fs= 'sudo nano/etc/fstab'
-
+alias fs='sudo nano/etc/fstab'
+alias bs='browser-sync start --server --files "**/*.*"'
+alias gulpclone='git clone https://github.com/otissv/gulp.git'
+# Trash
 alias rm='trash-put'
 alias tl='trash-list'
 alias rt='restore-trash'
@@ -141,7 +143,7 @@ function pr {
 
 #
 function crm {
-  chromium $1
+  google-chrome-stable $1
 }
 
 #Vagrant aliases
