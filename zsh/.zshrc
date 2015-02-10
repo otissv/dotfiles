@@ -53,7 +53,7 @@ alias qm='~/dotfiles/applications/quick-menu.sh'
 alias mr='sudo nano /etc/pacman.d/mirrorlist'
 alias lg='sudo nano /etc/locale.gen'
 alias h='nano /etc/hostname'
-alias fs='sudo nano/etc/fstab'
+alias fs='sudo nano /etc/fstab'
 alias bs='browser-sync start --server --files "**/*.*"'
 alias gulpclone='git clone https://github.com/otissv/gulp.git'
 # Trash
@@ -149,7 +149,7 @@ function crm {
 #Vagrant aliases
 #alias vcd ='cd ~/vagrant'
 alias vdir="cd $HOME/vagrant"
-alias vinit='vagrant init hashicorp/precise32'
+alias vinit='vagrant init ubuntu/trusty64'
 alias vup='vagrant up'
 alias vssh='vagrant ssh'
 alias vssh='vagrant up && vagrant ssh'

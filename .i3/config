@@ -46,7 +46,8 @@ set $ws9  9 Games 
 set $ws10 10 Win 
 
 # applications
-set $cloud                    dropboxd
+set $cloud1                   dropboxd
+set $cloud2                   i3-sensible-terminal -x $HOME/.hubic
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
@@ -359,7 +360,8 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 
 # autostart -------------------------------------------------------------------------------------------------------------------
 exec --no-startup-id $wallpaper
-exec --no-startup-id $cloud
+exec --no-startup-id $cloud1
+exec --no-startup-id $cloud2
 
 # application ---------------------------------------------------------------------------------------------------------------
 bindsym $mod+Return exec $terminal
