@@ -29,7 +29,7 @@ amixer -c 0 cset name='IEC958 Playback Switch' on
 
 # Alias
 alias p='cd ~/projects'
-alias pc='cd ~/projects/express-starter'
+alias pc='cd ~/projects/react-starter'
 alias dot='cd ~/dotfiles'
 alias a='atom .'
 alias wm='sudo wifi-menu wlp4s0'
@@ -56,10 +56,19 @@ alias h='nano /etc/hostname'
 alias fs='sudo nano /etc/fstab'
 alias bs='browser-sync start --server --files "**/*.*"'
 alias gulpclone='git clone https://github.com/otissv/gulp.git'
+
 # Trash
 alias rm='trash-put'
 alias tl='trash-list'
 alias rt='restore-trash'
+
+# History
+function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
+# Nginx
+alias ngstart='sudo /etc/init.d/nginx start'
+alias ngstop='sudo /etc/init.d/nginx stop'
+alias ngr='sudo /etc/init.d/nginx restart'
 
 function tc {
   touch $1
@@ -147,14 +156,12 @@ function crm {
 }
 
 #Vagrant aliases
-#alias vcd ='cd ~/vagrant'
-alias vdir="cd $HOME/vagrant"
+alias vcd="cd $HOME/vagrant_files"
 alias vinit='vagrant init ubuntu/trusty64'
-alias vup='vagrant up'
-alias vssh='vagrant ssh'
 alias vssh='vagrant up && vagrant ssh'
-alias vreload='vagrant reload && vagrant ssh'
-alias vhalt='vagrant halt'
+alias vr='vagrant reload && vagrant ssh'
+alias vh='vagrant halt'
+
 
 #Rails
 alias rbower-init='rails g bower_rails:initialize json'

@@ -18,8 +18,8 @@ xset s off
 #keyboard layout
 setxkbmap -layout us,gb -option grp:shift_shift_toggle
 
-# hides mouse cursor when nit in use
-#unclutter &
+# set networktable screen
+xinput map-to-output 15 HDMI-0
 
 # switch on numlock
 numlockx &
