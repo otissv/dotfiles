@@ -61,7 +61,8 @@ else
 fi
  
 # basic prompt on the left
-PROMPT='[%{$fg[green]%}%n@%m%{$reset_color%}]%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%}) %B$%b '
+precmd() { print -rP "[%{$fg[green]%}%n@%m%{$reset_color%}]" }
+PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 
 
