@@ -128,9 +128,16 @@ alias npms='npm install --save'
 alias npmd='npm install --save-dev'
 alias npmu='npm update'
 alias npmo='npm outdated'
+
 alias npmi-g='npm install -g'
 alias npmu-g='npm update -g'
 alias npmo-g='npm outdated -g'
+
+alias npms='npm start'
+alias npmt='npm test'
+alias npmw='npm run watch'
+alias npmv='npm run server'
+
 
 function tc {
   touch $1
