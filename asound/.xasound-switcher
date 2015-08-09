@@ -29,7 +29,8 @@ echo -e "\nEnter device number of selected card: \c"
 read dv
 
 # update .asoundrc
-if [$sc == "1" ] then
+if [$sc = "1" ]
+then
   touch ~/.asoundrc
   echo "defaults.pcm.card $sc" > ~/.asoundrc
   echo "defaults.pcm.device $dv" >> ~/.asoundrc
@@ -43,8 +44,7 @@ echo -e "  device: $dv"
 
 
 #restart pulse audio
-pulseaudio --kill
-pulseaudio --start
+alsactl kill rescan
 
 # unmute sound
-amixer sset Master unmute
+amixer set Master unmute

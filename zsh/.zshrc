@@ -26,12 +26,12 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
- 
+
 # show git branch/tag, or name-rev if on detached head
 parse_git_branch() {
   (command git symbolic-ref -q HEAD || command git name-rev --name-only --no-undefined --always HEAD) 2>/dev/null
 }
- 
+
 # show red star if there are uncommitted changes
 parse_git_dirty() {
   if command git diff-index --quiet HEAD 2> /dev/null; then
@@ -40,26 +40,26 @@ parse_git_dirty() {
     echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
   fi
 }
- 
+
 # if in a git repo, show dirty indicator + git branch
 git_custom_status() {
   local git_where="$(parse_git_branch)"
   [ -n "$git_where" ] && echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX${git_where#(refs/heads/|tags/)}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
- 
+
 # show current rbenv version if different from rbenv global
 rbenv_version_status() {
   local ver=$(rbenv version-name)
   [ "$(rbenv global)" != "$ver" ] && echo "[$ver]"
 }
- 
+
 # put fancy stuff on the right
 if which rbenv &> /dev/null; then
   RPS1='$(git_custom_status)%{$fg[red]%}$(rbenv_version_status)%{$reset_color%} $EPS1'
 else
   RPS1='$(git_custom_status) $EPS1'
 fi
- 
+
 # basic prompt on the left
 precmd() { print -rP "[%{$fg[green]%}%n@%m%{$reset_color%}]" }
 PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
@@ -92,10 +92,11 @@ alias rc='clear && source ~/.zshrc'
 alias c='clear'
 alias r='source ~/.zshrc'
 alias z='nano ~/.zshrc'
-alias l='ls -lah'
+alias lah='ls -lah'
 alias ld='ls -l | egrep "^d"'
-alias lf="ls -l | egrep -v '^d'"
+alias lf='ls -l | egrep -v '^d''
 alias lwd='ls -d */'
+alias lrt='ls -lrt'
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
@@ -107,7 +108,9 @@ alias lg='sudo nano /etc/locale.gen'
 alias h='nano /etc/hostname'
 alias fs='sudo nano /etc/fstab'
 alias bs='browser-sync start --server --files "**/*.*"'
-alias gulpclone='git clone https://github.com/otissv/gulp.git'
+alias kan='killall node'
+alias ncm='ncmpcpp'
+alias apache='sudo systemctl start httpd'
 
 # Trash
 alias rm='trash-put'
@@ -124,8 +127,8 @@ alias ngr='sudo /etc/init.d/nginx restart'
 
 # npm
 alias npmi='npm install'
-alias npms='npm install --save'
-alias npmd='npm install --save-dev'
+alias npmis='npm install --save'
+alias npmid='npm install --save-dev'
 alias npmu='npm update'
 alias npmo='npm outdated'
 

@@ -1,0 +1,37 @@
+#!/bin/sh
+yellow="\e[0;93m"
+white="\e[0;37m"
+
+clear
+
+function setSoundDevice {
+echo "defaults.pcm.card $1" > ~/.asoundrc
+echo "defaults.pcm.device $2" >> ~/.asoundrc
+echo "defaults.ctl.card $1" >> ~/.asoundrc
+}
+
+echo -e "Sound Device Switcher"
+echo -e "$white================================================"
+echo -e "$yellow 1\t $white\e[1mBuilt-in speakers"
+echo -e "$yellow 2\t $white\e[1mHDMI2"
+echo -e "\n$yellow q\t $white\e[nQuit"
+
+echo -e "\n\e[1mExecute: \c"
+read $opt
+
+case "$opt" in
+  1)
+  mv ~/.asoundrc ~/.asoundrcOff
+  ;;
+  2)
+  mv ~/.asoundrcOff ~/.asoundrc
+  ;;
+  q)
+  exit 1
+  ;;
+  *)
+  ;;
+esac
+
+# Restart asla
+alsactl kill rescan
