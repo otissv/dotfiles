@@ -34,15 +34,15 @@ set $wallpaper feh --randomize --bg-scale $HOME/wallpaper/randomise/*
 set $resize 1
 
 # workspaces
-set $ws1  1 One 
-set $ws2  2 Two 
-set $ws3  3 There 
-set $ws4  4 Four 
-set $ws5  5 Five 
-set $ws6  6 Six 
-set $ws7  7 Play 
+set $ws1  1 Tests 
+set $ws2  2 Front 
+set $ws3  3 Browser 
+set $ws4  4 Back 
+set $ws5  5 Style KIt 
+set $ws6  6 Schema 
+set $ws7  7 Utils 
 set $ws8  8 Download 
-set $ws9  9 Games 
+set $ws9  9 RoboMongo 
 set $ws10 10 Win 
 
 # applications
@@ -51,7 +51,7 @@ set $cloud2                   i3-sensible-terminal -x $HOME/.hubic
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
-set $file-manager             pcmanfm
+set $file-manager             nautilus
 set $browser                  google-chrome-stable
 set $office                   libreoffice
 set $torrent                  transmission-gtk
@@ -76,6 +76,8 @@ set $sound-mixer              $terminal-x alsamixer
 set $wifi-menu                $terminal-x sudo wifi-menu wlp4s0
 set $system-monitor           $terminal-x top
 set $bluetooth-menu           blueman-manager
+set $control                  gnome-control-center
+
 
 #keyboard
 #Don't forget to change keyoard menu below!
@@ -280,10 +282,6 @@ bar {
 }
 
 
-# Settings menu -----------------------------------------------------------------------------------------------------------------------
-bindsym $mod+Shift+k mode "$mode_keyboard"
-
-
 # display menu-------------------------------------------------------------------------------------------------------------------------
 
 set $display1 LVDS-0
@@ -306,7 +304,7 @@ bindsym $mod+Shift+d mode "$mode_display"
 
 
 # exit menu -------------------------------------------------------------------------------------------------------------------------
-set $mode_exit Exit menu - (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (x) shutdown
+set $mode_exit Exit menu - (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (ctrl+x) shutdown
 
 mode "$mode_exit" {
   bindsym l exec --no-startup-id $exit lock, mode "default"
@@ -314,7 +312,7 @@ mode "$mode_exit" {
   bindsym s exec --no-startup-id $exit suspend, mode "default"
   bindsym h exec --no-startup-id $exit hibernate, mode "default"
   bindsym r exec --no-startup-id $exit reboot, mode "default"
-  bindsym x exec --no-startup-id $exit shutdown, mode "default"
+  bindsym $mod+x exec --no-startup-id $exit shutdown, mode "default"
   # back to normal:  Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -336,7 +334,8 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+F1 exec  $launcher
 bindsym $acc+space exec  i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
 bindsym $acc+b exec      $browser
-bindsym $acc+c exec      $code-editor
+bindsym $acc+c exec      $control
+bindsym $acc+a exec      $code-editor
 bindsym $acc+x exec      $text-editor
 bindsym $acc+f exec      $file-manager
 bindsym $acc+g exec      $games

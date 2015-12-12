@@ -65,29 +65,18 @@ precmd() { print -rP "[%{$fg[green]%}%n@%m%{$reset_color%}]" }
 PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 
-
-# Paths
-export PATH=$PATH:/usr/bin/
-export PATH=$PATH:$HOME/bin/
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-eval "$(rbenv init -)"
-
-#Node Version Manager
-source /usr/share/nvm/init-nvm.sh
-nvm use 0.12
-
 # S/PDIF output
 amixer -c 0 cset name='IEC958 Playback Switch' on
 
 # Alias
-alias p='cd ~/projects'
-alias pc='cd ~/projects/ui-builder'
+alias p='cd ~/work/projects'
+alias pc='cd ~/work/projects/react-site-builder'
 alias dot='cd ~/dotfiles'
 alias a='atom .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
-alias fm='pcmanfm'
-alias sfm='sudo pcmanfm'
+alias fm='nautilus'
+alias sfm='sudo nautilus'
 alias rc='clear && source ~/.zshrc'
 alias c='clear'
 alias r='source ~/.zshrc'
@@ -111,6 +100,15 @@ alias bs='browser-sync start --server --files "**/*.*"'
 alias kan='killall node'
 alias ncm='ncmpcpp'
 alias apache='sudo systemctl start httpd'
+
+# Run command on all subdirs in dir
+function alldir {
+  # for D in $1*/; do $($@); done
+  # find $1 -maxdepth 1 -type f
+  cmd=${@:2};
+
+  find $1 -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && $cmd" \;
+}
 
 # Trash
 alias rm='trash-put'
@@ -136,11 +134,17 @@ alias npmi-g='npm install -g'
 alias npmu-g='npm update -g'
 alias npmo-g='npm outdated -g'
 
-alias npms='npm start'
-alias npmt='npm test'
-alias npmw='npm run watch'
-alias npmv='npm run server'
-
+alias npms='clear && npm start'
+alias npmt='clear && npm test'
+alias npmtw='clear && npm run test:watch'
+alias npmts='clear && npm run test:spec'
+alias npml='clear && npm run lint'
+alias npmlw='clear && npm run lint:watch'
+alias npmw='clear && npm run watch'
+alias npmv='clear && npm run server'
+alias npmb='clear && npm run build'
+alias npmbw='clear && npm run build:watch'
+alias npmpub='clear && npm publish'
 
 function tc {
   touch $1
@@ -241,3 +245,15 @@ alias vh='vagrant halt'
 #Rails
 alias rbower-init='rails g bower_rails:initialize json'
 alias rbower='rake bower:install'
+
+
+#Functional Javascript Workshop
+alias fjw='functional-javascript-workshop'
+
+function fjr {
+   functional-javascript-workshop run $1
+}
+
+function fjv {
+   functional-javascript-workshop verify $1
+}
