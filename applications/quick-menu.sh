@@ -7,7 +7,6 @@ inactive="\e[0;36m"
 # init =====================================================
 function quickMenu {
   clear
-  loadFiles apps
   loadFiles settings
   settingsMenu
 }
@@ -81,18 +80,28 @@ function mainOptions {
 # app menu =========================================================
 function appsMenu {
   mainMenu $active $inactive $inactive
-  for ((i=0; i<${#apps[@]}; i++))
-  do
-    IFS="," read var1 var2 <<< "${apps[i]}"
-    n=$(($i + 1))
-    echo -e "$yellow $n\t $white\e[1m${var1^}\e[0m - ${var2^}"
-  done
+
+  echo -e "\n\e[0m Chrome Apps"
+  echo -e "$yellow 1\t $white\e[1mFacebook"
+  echo -e "$yellow 2\t $white\e[1mMessenger"
+  echo -e "$yellow 3\t $white\e[1mTweetDeck"
   getOption "apps"
 }
 
 function appOptions {
-  IFS="," read var1 var2<<< "${apps[ (($1 - 1)) ]}"
-  ($var1&> /dev/null &);
+  case "$1" in
+    1)
+    echo "hello"
+    exec deskopen /home/ninja/Desktop/facebook.desktop 
+    ;;
+    2)
+    exec deskopen /home/ninja/Desktop/facebook.desktop
+    ;;
+    3)
+    exec deskopen /home/ninja/Desktop/facebook.desktop
+    ;;
+    *)
+  esac
 }
 
 # settings menu =====================================================

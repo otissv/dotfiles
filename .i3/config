@@ -66,7 +66,9 @@ set $code-editor              atom
 set $cddvd-burner             silicon
 set $skype                    skype
 set $viber                    viber
-set $messenger                i3-sensible-terminal -x dex $HOME/Desktop/messenger.desktop
+set $messenger                deskopen $HOME/Desktop/messenger.desktop
+set $facebook                 deskopen $HOME/Desktop/facebook.desktop
+set $tweetdeck                deskopen $HOME/Desktop/tweetdeck.desktop
 
 # set
 set $read                     $dot-path/read.md
@@ -349,6 +351,9 @@ bindsym $acc+d exec      $downloader
 bindsym $acc+t exec      $torrent
 bindsym $acc+m exec      $music
 
+bindsym $acc+Control+f exec $facebook
+bindsym $acc+Control+m exec $facebook
+bindsym $acc+Control+t exec $tweetdeck
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a

@@ -145,6 +145,12 @@ alias npmv='clear && npm run server'
 alias npmb='clear && npm run build'
 alias npmbw='clear && npm run build:watch'
 alias npmpub='clear && npm publish'
+alias npmalli='clear && alldir . npm install'
+alias npmallb='clear && alldir . npm run build'
+alias npmallt='clear && alldir . npm run test'
+alias npmd='npm run docs'
+alias npmdw='npm run docs:watch'
+alias nomalld='clear && npm alldir . npm run docs'
 
 function tc {
   touch $1
@@ -160,17 +166,12 @@ alias gr='git reset --soft HEAD~1'
 alias gs='git status'
 alias gd='git diff'
 alias gh='git push heroku master'
+alias gpages='git push origin gh-pages'
+
 
 function ga {
-  case $1 in
-    -c)
-      git add $3;
-      git commit -m $2;
-      ;;
-    *)
-    git add $1;
-    ;;
-  esac
+  git add $1; 
+  git commit -m $2;
 }
 
 function gc {
