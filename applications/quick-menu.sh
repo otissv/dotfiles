@@ -92,7 +92,7 @@ function appOptions {
   case "$1" in
     1)
     echo "hello"
-    exec deskopen /home/ninja/Desktop/facebook.desktop 
+    exec deskopen /home/ninja/Desktop/facebook.desktop
     ;;
     2)
     exec deskopen /home/ninja/Desktop/facebook.desktop
@@ -144,7 +144,7 @@ function settingsOptions {
     exec terminator -x xrandr --output LVDS-0 --off --output HDMI-0 --auto
     ;;
     3)
-    exec terminator -x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-3 --auto --right-of LVDS-0
+    exec terminator -x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-3 --auto --left-of HDMI-0
     ;;
     4)
     exec terminator -x xrandr  --output LVDS-0 --auto --output HDMI-0--auto
