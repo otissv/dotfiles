@@ -109,72 +109,71 @@ function settingsMenu {
   mainMenu $inactive $active $inactive
 
   echo -e "\n\e[0m Display settings"
-  echo -e "$yellow 1\t $white\e[1mBuilt-in only"
-  echo -e "$yellow 2\t $white\e[1mHDMI only"
-  echo -e "$yellow 3\t $white\e[1mExtended"
-  echo -e "$yellow 4\t $white\e[1mCloned"
-  echo -e "$yellow 5\t $white\e[1mGraphics settings"
+  echo -e "$yellow 10\t $white\e[1mBuilt-in only"
+  echo -e "$yellow 11\t $white\e[1mHDMI only"
+  echo -e "$yellow 12\t $white\e[1mExtended"
+  echo -e "$yellow 13\t $white\e[1mCloned"
+  echo -e "$yellow 14\t $white\e[1mGraphics settings"
 
   echo -e "\n\e[0m Keyboard settings"
-  echo -e "$yellow 6\t $white\e[1mUS"
-  echo -e "$yellow 7\t $white\e[1mGB"
+  echo -e "$yellow 21\t $white\e[1mUS"
+  echo -e "$yellow 22\t $white\e[1mGB"
+  echo -e "$yellow 23\t $white\e[1mPL"
 
   echo -e "\n\e[0m Network settings"
-  echo -e "$yellow 8\t $white\e[1mBluetooth"
-  echo -e "$yellow 9\t $white\e[1mWifi"
+  echo -e "$yellow 30\t $white\e[1mBluetooth"
+  echo -e "$yellow 31\t $white\e[1mWifi"
 
   echo -e "\n\e[0m Sound settings"
-  echo -e "$yellow 10\t $white\e[1mMixer"
-  echo -e "$yellow 11\t $white\e[1mSound output"
+  echo -e "$yellow 40\t $white\e[1mMixer"
 
   echo -e "\n\e[0m System settings"
-  echo -e "$yellow 12\t $white\e[1mConfiguration files"
-
-  echo -e "$yellow 13\t $white\e[1mTop"
+  echo -e "$yellow 90\t $white\e[1mTop"
+  echo -e "$yellow 99\t $white\e[1mConfiguration files"
 
   getOption settings
 }
 
 function settingsOptions {
   case "$1" in
-    1)
+    10)
     exec xrandr --output LVDS-0 --auto --output HDMI-0 --off
     ;;
-    2)
+    11)
     exec terminator -x xrandr --output LVDS-0 --off --output HDMI-0 --auto
     ;;
-    3)
+    12)
     exec terminator -x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-3 --auto --left-of HDMI-0
     ;;
-    4)
+    13)
     exec terminator -x xrandr  --output LVDS-0 --auto --output HDMI-0--auto
     ;;
-    5)
+    14)
     (nvidia-settings&> /dev/null &)
     ;;
-    6)
+    21)
     exec setxkbmap us
     ;;
-    7)
+    22)
     exec setxkbmap gb
     ;;
-    8)
+    23)
+    exec setxkbmap pl
+    ;;
+    30)
     exec blue-manager
     ;;
-    9)
+    31)
     exec terminator -x sudo wifi-menu
     ;;
     10)
-    exec alsamixer
+    exec pavucontrol
     ;;
-    11)
-    exec bash terminator -x terminator -x $HOME/.asound-switcher,sound-switcher
+    90)
+    exec terminator -x htop
     ;;
-    12)
+    99)
     (atom ~/dotfiles/read.md&> /dev/null &)
-    ;;
-    13)
-    exec terminator -x top
     ;;
     *)
   esac

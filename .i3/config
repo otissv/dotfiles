@@ -34,24 +34,24 @@ set $wallpaper feh --randomize --bg-scale $HOME/wallpaper/randomise/*
 set $resize 1
 
 # workspaces
-set $ws1  1 Tests 
-set $ws2  2 Front 
-set $ws3  3 Browser 
-set $ws4  4 Back 
-set $ws5  5 Style KIt 
-set $ws6  6 Schema 
-set $ws7  7 Utils 
-set $ws8  8 Download 
-set $ws9  9 RoboMongo 
-set $ws10 10 Win 
+set $ws1  1 
+set $ws2  2 
+set $ws3  3 
+set $ws4  4 
+set $ws5  5 
+set $ws6  6 
+set $ws7  7 
+set $ws8  8 
+set $ws9  9 
+set $ws10 10 
 
 # applications
 set $cloud1                   dropboxd
-set $cloud2                   i3-sensible-terminal -x $HOME/.hubic
+set $cloud2                   hubic-gtk
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
-set $file-manager             nautilus
+set $file-manager             pcmanfm
 set $browser                  google-chrome-stable
 set $office                   libreoffice
 set $torrent                  transmission-gtk
@@ -66,6 +66,7 @@ set $code-editor              atom
 set $cddvd-burner             silicon
 set $skype                    skype
 set $viber                    viber
+set $gtk                      lxappearance
 
 
 # Desktop shortcuts
@@ -82,7 +83,9 @@ set $youtube                  deskopen $HOME/Desktop/youtube.desktop
 set $keep                     deskopen $HOME/Desktop/keep.desktop
 set $calandar                 deskopen $HOME/Desktop/calandar.desktop
 set $trello                   deskopen $HOME/Desktop/trello.desktop
-# set
+set $kindle                   deskopen $HOME/Desktop/kindle.desktop
+
+# system
 set $read                     $dot-path/read.md
 set $sound-card               $terminal-x bash $HOME/.asound-switcher
 set $config                   $text-editor $dot-path
@@ -90,7 +93,7 @@ set $sound-mixer              $terminal-x alsamixer
 set $wifi-menu                $terminal-x sudo wifi-menu wlp4s0
 set $system-monitor           $terminal-x top
 set $bluetooth-menu           blueman-manager
-set $control                  gnome-control-center
+set $control                  pavucontrol
 
 
 #keyboard
@@ -375,6 +378,8 @@ bindsym $acc+Control+y exec $youtube
 bindsym $acc+Control+k exec $keep
 bindsym $acc+Control+c exec $calandar
 bindsym $acc+Control+l exec $trello
+bindsym $acc+Control+r exec $kindle
+
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
