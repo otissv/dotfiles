@@ -165,7 +165,7 @@ alias gp='git push origin master'
 alias gr='git reset --soft HEAD~1'
 alias gs='git status'
 alias gd='git diff'
-alias gh='git push heroku master'
+alias gpull='git pull origin master'
 alias gpages='git push origin gh-pages'
 
 
