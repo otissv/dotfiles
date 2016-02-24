@@ -46,7 +46,7 @@ set $ws9  9 
 set $ws10 10 
 
 # applications
-set $cloud1                   dropboxd
+set $cloud1                   dropbox
 set $cloud2                   hubic-gtk
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
