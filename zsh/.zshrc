@@ -216,6 +216,10 @@ function gremote {
   git remote add origin https://github.com/otissv/${PWD##*/}
 }
 
+function grchange {
+  git remote set-url origin https://github.com/otissv/${PWD##*/}
+}
+
 function gcreate {
   hub create $1 
 }
