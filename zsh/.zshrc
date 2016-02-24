@@ -213,7 +213,7 @@ function gb {
 }
 
 function gremote {
-  git remote add origin $1
+  git remote add origin https://github.com/otissv/${PWD##*/}
 }
 
 function gcreate {
