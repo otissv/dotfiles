@@ -169,7 +169,6 @@ alias gd='git diff'
 alias gpull='git pull origin master'
 alias gpages='git push origin gh-pages'
 
-
 function ga {
   git add $1; 
   git commit -m $2;
@@ -217,6 +216,14 @@ function gremote {
   git remote add origin $1
 }
 
+function gcreate {
+  hub create $1 
+}
+
+function gfetch {
+ hub fetch $1
+}
+
 # clear console
 clear
 
@@ -238,6 +245,7 @@ function pr {
 function crm {
   google-chrome-stable $1
 }
+
 
 #Vagrant aliases
 alias vp='vagrant package'
