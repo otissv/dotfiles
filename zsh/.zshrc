@@ -152,6 +152,7 @@ alias npmd='npm run docs'
 alias npmdw='npm run docs:watch'
 alias nomalld='clear && npm alldir . npm run docs'
 
+
 function tc {
   touch $1
 }
@@ -210,6 +211,10 @@ function gb {
         echo "\n~/.zshrc"
         ;;
     esac
+}
+
+function gremote {
+  git remote add origin $1
 }
 
 # clear console
