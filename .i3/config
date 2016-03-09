@@ -52,6 +52,7 @@ set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $file-manager             pcmanfm
+set $file-manage2             nautilus
 set $browser                  google-chrome-stable
 set $office                   libreoffice
 set $torrent                  transmission-gtk
@@ -61,8 +62,7 @@ set $games                    steam
 set $image-editor             gimp
 set $vector-editor            inkscape
 set $downloader               youtube-dl-gui
-set $text-editor              scribes
-set $code-editor              atom
+set $text-editor              leafpad
 set $cddvd-burner             silicon
 set $skype                    skype
 set $viber                    viber
@@ -93,7 +93,8 @@ set $sound-mixer              $terminal-x alsamixer
 set $wifi-menu                $terminal-x sudo wifi-menu wlp4s0
 set $system-monitor           $terminal-x top
 set $bluetooth-menu           blueman-manager
-set $control                  pavucontrol
+set $audio                    pavucontrol
+set $control                  gnome-control-center;
 
 
 #keyboard
@@ -352,9 +353,10 @@ bindsym $mod+F1 exec  $launcher
 bindsym $acc+space exec  i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
 bindsym $acc+b exec      $browser
 bindsym $acc+c exec      $control
-bindsym $acc+a exec      $code-editor
+bindsym $acc+a exec      $audio
 bindsym $acc+x exec      $text-editor
 bindsym $acc+f exec      $file-manager
+bindsym $acc+n exec      $file-manage2
 bindsym $acc+g exec      $games
 bindsym $acc+p exec      $skype
 bindsym $acc+v exec      $video
