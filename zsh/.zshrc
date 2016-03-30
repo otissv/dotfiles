@@ -65,6 +65,10 @@ precmd() { print -rP "[%{$fg[green]%}%n@%m%{$reset_color%}]" }
 PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 
+# Paths
+export PATH=$HOME/bin:$PATH
+export PATH=./node_modules/.bin:$PATH
+
 # S/PDIF output
 amixer -c 0 cset name='IEC958 Playback Switch' on
 
@@ -170,7 +174,7 @@ alias gpull='git pull origin master'
 alias gpages='git push origin gh-pages'
 
 function ga {
-  git add $1; 
+  git add $1;
   git commit -m $2;
 }
 
@@ -221,7 +225,7 @@ function grchange {
 }
 
 function gcreate {
-  hub create $1 
+  hub create $1
 }
 
 function gfetch {
