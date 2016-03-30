@@ -383,6 +383,11 @@ bindsym $acc+Control+l exec $trello
 bindsym $acc+Control+r exec $kindle
 
 
+# Volume controls ---------------------------------------------------------------------------------------------------------------
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used his favorite modifier (alt or windows)

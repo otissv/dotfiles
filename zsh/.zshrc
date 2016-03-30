@@ -68,6 +68,11 @@ PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 # Paths
 export PATH=$HOME/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+
 
 # S/PDIF output
 amixer -c 0 cset name='IEC958 Playback Switch' on
