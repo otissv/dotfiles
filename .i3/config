@@ -17,7 +17,7 @@ set $mod Mod1
 set $acc Mod4
 
 # variables -------------------------------------------------------------------------------------------------------------------
-
+  
 # font
 set $font Open Sans, Icons 10
 
@@ -342,8 +342,8 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 
 # autostart -------------------------------------------------------------------------------------------------------------------
 exec --no-startup-id $wallpaper
-exec --no-startup-id $cloud1
-exec --no-startup-id $cloud2
+# exec --no-startup-id $cloud1
+# exec --no-startup-id $cloud2
 exec --no-startup-id $viber
 
 # application ---------------------------------------------------------------------------------------------------------------
@@ -367,7 +367,6 @@ bindsym $acc+o exec      $office
 bindsym $acc+d exec      $downloader
 bindsym $acc+t exec      $torrent
 bindsym $acc+m exec      $music
-
 
 bindsym $acc+Control+d exec $docs
 bindsym $acc+Control+u exec $udemy
