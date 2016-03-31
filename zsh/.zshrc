@@ -65,18 +65,17 @@ precmd() { print -rP "[%{$fg[green]%}%n@%m%{$reset_color%}]" }
 PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 
-# Paths
-export PATH=$HOME/bin:$PATH
-
-
 # S/PDIF output
 amixer -c 0 cset name='IEC958 Playback Switch' on
+
+
 
 # Alias
 alias p='cd ~/work/projects'
 alias pc='cd ~/work/projects/react-site-builder'
 alias dot='cd ~/dotfiles'
 alias a='atom .'
+alias s='subl3 .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
 alias fm='nautilus'
@@ -104,6 +103,8 @@ alias bs='browser-sync start --server --files "**/*.*"'
 alias kan='killall node'
 alias ncm='ncmpcpp'
 alias apache='sudo systemctl start httpd'
+alias w='curl -4 http://wttr.in/Opole'
+
 
 # Run command on all subdirs in dir
 function alldir {
