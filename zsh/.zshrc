@@ -104,7 +104,7 @@ alias killnode='killall node'
 alias ncm='ncmpcpp'
 alias apache='sudo systemctl start httpd'
 alias w='curl -4 http://wttr.in/Opole'
-
+alias mkdir="mkdir -p"
 
 # Run command on all subdirs in dir
 function alldir {
