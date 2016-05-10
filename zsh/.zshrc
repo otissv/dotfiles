@@ -78,8 +78,8 @@ alias a='atom .'
 alias s='subl3 .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
-alias fm='nautilus'
-alias sfm='sudo nautilus'
+alias fm='ranger'
+alias sfm='sudo ranger'
 alias rc='clear && source ~/.zshrc'
 alias c='clear'
 alias r='source ~/.zshrc'
@@ -105,6 +105,8 @@ alias ncm='ncmpcpp'
 alias apache='sudo systemctl start httpd'
 alias w='curl -4 http://wttr.in/Opole'
 alias mkdir="mkdir -p"
+alias droid="/opt/android-sdk/tools/android avd"
+
 
 # Run command on all subdirs in dir
 function alldir {
@@ -153,6 +155,7 @@ alias npmpub='clear && npm publish'
 alias npmalli='clear && alldir . npm install'
 alias npmallb='clear && alldir . npm run build'
 alias npmallt='clear && alldir . npm run test'
+alias npmallu='clear && alldir . ncu upgrade -a'
 alias npmd='npm run docs'
 alias npmdw='npm run docs:watch'
 alias nomalld='clear && npm alldir . npm run docs'
@@ -167,12 +170,14 @@ function mkcd {
 }
 
 # git
-alias gp='git push origin master'
+alias gpushm='git push origin master'
+alias gpushp='git push origin gh-pages'
+alias gpullm='git pull origin master'
+alias gpullp='git pull origin gh-pages'
 alias gr='git reset --soft HEAD~1'
 alias gs='git status'
 alias gd='git diff'
-alias gpull='git pull origin master'
-alias gpages='git push origin gh-pages'
+
 
 function ga {
   git add $1;
@@ -233,8 +238,6 @@ function gfetch {
  hub fetch $1
 }
 
-# clear console
-clear
 
 # pacman
 alias pi='pacman -Q'
@@ -263,20 +266,3 @@ alias vssh='vagrant ssh'
 alias vup='vagrant up && vagrant ssh'
 alias vr='vagrant reload && vagrant ssh'
 alias vh='vagrant halt'
-
-
-#Rails
-alias rbower-init='rails g bower_rails:initialize json'
-alias rbower='rake bower:install'
-
-
-#Functional Javascript Workshop
-alias fjw='functional-javascript-workshop'
-
-function fjr {
-   functional-javascript-workshop run $1
-}
-
-function fjv {
-   functional-javascript-workshop verify $1
-}
