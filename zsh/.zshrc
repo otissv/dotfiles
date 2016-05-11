@@ -171,9 +171,11 @@ function mkcd {
 
 # git
 alias gpushm='git push origin master'
-alias gpushp='git push origin gh-pages'
 alias gpullm='git pull origin master'
 alias gpullp='git pull origin gh-pages'
+alias gpushp='git push origin gh-pages'
+alias gpulld='git pull origin dev'
+alias gpushd='git push origin dev'
 alias gr='git reset --soft HEAD~1'
 alias gs='git status'
 alias gd='git diff'
