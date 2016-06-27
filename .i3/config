@@ -43,11 +43,12 @@ set $ws6  6 
 set $ws7  7 
 set $ws8  8 
 set $ws9  9 
-set $ws10 10 
+set $ws10 10 
 
 # applications
 set $cloud1                   dropbox
 set $cloud2                   hubic-gtk
+set $cloud3                   insync start
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
@@ -344,6 +345,7 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 exec --no-startup-id $wallpaper
 # exec --no-startup-id $cloud1
 # exec --no-startup-id $cloud2
+exec --no-startup-id $cloud3
 exec --no-startup-id $viber
 
 # application ---------------------------------------------------------------------------------------------------------------

@@ -84,11 +84,12 @@ alias rc='clear && source ~/.zshrc'
 alias c='clear'
 alias r='source ~/.zshrc'
 alias z='nano ~/.zshrc'
-alias lah='ls -lah'
-alias ld='ls -l | egrep "^d"'
-alias lf='ls -l | egrep -v '^d''
-alias lwd='ls -d */'
-alias lrt='ls -lrt'
+alias ls='ls --color=always'
+alias ll='ls -all --color=always'
+alias ld='ls -la --color=always | egrep "^d"'
+alias lf='ls -la --color=always | egrep -v '^d''
+alias lwd='ls -d */ --color=always'
+alias lrt='ls -lrt --color=always'
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
@@ -106,7 +107,7 @@ alias apache='sudo systemctl start httpd'
 alias w='curl -4 http://wttr.in/Opole'
 alias mkdir="mkdir -p"
 alias droid="/opt/android-sdk/tools/android avd"
-
+alias www='cd /var/www'
 
 # Run command on all subdirs in dir
 function alldir {
@@ -268,3 +269,7 @@ alias vssh='vagrant ssh'
 alias vup='vagrant up && vagrant ssh'
 alias vr='vagrant reload && vagrant ssh'
 alias vh='vagrant halt'
+
+#react-native aliases
+alias rns='react-native start'
+alias rna='react-native run-android'
