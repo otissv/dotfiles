@@ -71,7 +71,7 @@ amixer -c 0 cset name='IEC958 Playback Switch' on
 
 
 # Alias
-alias p='cd ~/work/projects'
+alias p='cd ~/google-drive/projects'
 alias pc='cd ~/work/projects/react-site-builder'
 alias dot='cd ~/dotfiles'
 alias a='atom .'
