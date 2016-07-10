@@ -66,7 +66,7 @@ PROMPT='%{$fg[yellow]%} %~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
 
 # S/PDIF output
-amixer -c 0 cset name='IEC958 Playback Switch' on
+# amixer -c 0 cset name='IEC958 Playback Switch' on
 
 
 
