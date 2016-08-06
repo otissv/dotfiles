@@ -104,11 +104,14 @@ set $keyboard-layout1         us
 set $keyboard-layout2         gb
 
 
+
 # application assignments ------------------------------------------------------------------------------------
 assign [class="^Youtube-dl-gui"]     $ws8
 assign [class="^Transmission-gtk"]   $ws8
 assign [class="^Vlc"]                $ws7
 assign [class="^Steam"]              $ws9
+
+for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
 
 # colors -----------------------------------------------------------------------------------------------------
 ##1A5091
