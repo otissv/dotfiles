@@ -1,0 +1,35 @@
+alias lc='ls --color=always'
+alias ll='ls -all --color=always'
+alias ld='ls -la --color=always | egrep "^d"'
+alias lf='ls -la --color=always | egrep -v '^d''
+alias lrt='ls -lrt --color=always'
+alias mlwd='ls -d */'
+alias mlrt='ls -lrt'
+alias mls='ls'
+alias mll='ls -all'
+alias mld='ls -la | egrep "^d"'
+alias mlf='ls -la | egrep -v '^d''
+alias mlwd='ls -d */'
+alias mlrt='ls -lrt'
+alias cd.='cd ..'
+alias cd..='cd ..'
+alias cd~='cd ~'
+alias mkdir="mkdir -p"
+
+# Run command on all subdirs in dir
+function alldir {
+  # for D in $1*/; do $($@); done
+  # find $1 -maxdepth 1 -type f
+  cmd=${@:2};
+
+  find $1 -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && $cmd" \;
+}
+
+
+function tc {
+  touch $@
+}
+
+function mkcd {
+  mkdir $1 && cd $1
+}

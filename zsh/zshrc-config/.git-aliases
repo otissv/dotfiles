@@ -1,0 +1,71 @@
+# git
+alias gpushm='git push origin master'
+alias gpullm='git pull origin master'
+alias gpullp='git pull origin gh-pages'
+alias gpushp='git push origin gh-pages'
+alias gpulld='git pull origin dev'
+alias gpushd='git push origin dev'
+alias gr='git reset --soft HEAD~1'
+alias gs='git status'
+alias gd='git diff'
+alias gpusho='git push oracle master'
+alias gpullo='git pull oracle master'
+
+function ga {
+  git add $1;
+  git commit -m $2;
+}
+
+function gc {
+  git commit -m $1
+}
+
+function gb {
+    case $1 in
+      -b)
+        git checkout -b $2;
+        ;;
+      -c)
+        git checkout $2;
+        ;;
+      -d)
+        git branch -d $2;
+        ;;
+      -l)
+        git branch;
+        ;;
+      -m)
+        git merge $2;
+        ;;
+      -v)
+        git branch -v;
+        ;;
+      *)
+        echo -e "Usage: gb <command>\n"
+        echo -e "gb -b\tcreate and immediately switch to a branch"
+        echo -e "gb -c\tswitched to a new branch"
+        echo -e "gb -d\tdelete a branch"
+        echo -e "gb -l\tlist your available branches"
+        echo -e "gb -m\tmerge a branch context into current one"
+        echo -e "gb -v\tsee the last commit on each branch"
+        echo -e "\n* beside a branch name indicates the branch as the   currently checkour branch"
+        echo "\n~/.zshrc"
+        ;;
+    esac
+}
+
+function gremote {
+  git remote add origin https://github.com/otissv/${PWD##*/}
+}
+
+function grchange {
+  git remote set-url origin https://github.com/otissv/${PWD##*/}
+}
+
+function gcreate {
+  hub create $1
+}
+
+function gfetch {
+ hub fetch $1
+}

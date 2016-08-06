@@ -1,0 +1,4 @@
+# Nginx
+alias ngstart='sudo /etc/init.d/nginx start'
+alias ngstop='sudo /etc/init.d/nginx stop'
+alias ngr='sudo /etc/init.d/nginx restart'

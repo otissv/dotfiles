@@ -1,0 +1,12 @@
+alias pi='pacman -Q'
+alias psy='sudo pacman -Sy'
+alias psu='sudo pacman -Syu'
+alias ysu='yaourt -Syu --aur'
+
+function ps {
+  sudo pacman -S $1
+}
+
+function pr {
+  sudo pacman -R $1
+}

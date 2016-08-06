@@ -1,0 +1,39 @@
+alias p='cd ~/google-drive/projects'
+alias pc='cd ~/work/projects/react-site-builder'
+alias dot='cd ~/dotfiles'
+alias rc='clear && source ~/.zshrc'
+alias c='clear'
+alias jx='journalctl -xe'
+alias j='journalctl'
+alias mr='sudo nano /etc/pacman.d/mirrorlist'
+alias lg='sudo nano /etc/locale.gen'
+alias h='nano /etc/hostname'
+alias fs='sudo nano /etc/fstab'
+alias r='source ~/.zshrc'
+alias z='nano ~/.zshrc'
+alias killnode='killall node'
+alias www='cd /var/www'
+
+
+# Applications
+alias a='atom .'
+alias s='subl3 .'
+alias wm='sudo wifi-menu wlp4s0'
+alias sf='screenfetch'
+alias fm='ranger'
+alias sfm='sudo ranger'
+alias bs='browser-sync start --server --files "**/*.*"'
+
+alias ncm='ncmpcpp'
+alias apache='sudo systemctl start httpd'
+alias w='curl -4 http://wttr.in/Opole'
+alias droid="/opt/android-sdk/tools/android avd"
+
+
+# History
+function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
+
+#react-native aliases
+alias rns='react-native start'
+alias rna='react-native run-android'

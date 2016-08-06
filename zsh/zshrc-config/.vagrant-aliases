@@ -1,0 +1,6 @@
+alias vp='vagrant package'
+alias vinit='vagrant init ubuntu/trusty64'
+alias vssh='vagrant ssh'
+alias vup='vagrant up && vagrant ssh'
+alias vr='vagrant reload && vagrant ssh'
+alias vh='vagrant halt'
