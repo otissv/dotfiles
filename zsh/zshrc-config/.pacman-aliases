@@ -4,9 +4,9 @@ alias psu='sudo pacman -Syu'
 alias ysu='yaourt -Syu --aur'
 
 function ps {
-  sudo pacman -S $1
+  sudo pacman -S $@
 }
 
 function pr {
-  sudo pacman -R $1
+  sudo pacman -R $@
 }

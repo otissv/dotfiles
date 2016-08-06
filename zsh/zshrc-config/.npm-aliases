@@ -5,9 +5,9 @@ alias npmid='npm install --save-dev'
 alias npmu='npm update'
 alias npmo='npm outdated'
 
-alias npmi-g='npm install -g'
-alias npmu-g='npm update -g'
-alias npmo-g='npm outdated -g'
+alias npmig='npm install -g'
+alias npmug='npm update -g'
+alias npmog='npm outdated -g'
 
 alias npms='clear && npm start'
 alias npmt='clear && npm test'

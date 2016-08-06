@@ -1,20 +1,26 @@
-alias lc='ls --color=always'
-alias ll='ls -all --color=always'
-alias ld='ls -la --color=always | egrep "^d"'
-alias lf='ls -la --color=always | egrep -v '^d''
-alias lrt='ls -lrt --color=always'
-alias mlwd='ls -d */'
-alias mlrt='ls -lrt'
-alias mls='ls'
-alias mll='ls -all'
-alias mld='ls -la | egrep "^d"'
-alias mlf='ls -la | egrep -v '^d''
-alias mlwd='ls -d */'
-alias mlrt='ls -lrt'
+
+
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
 alias mkdir="mkdir -p"
+
+
+if [[ "$OS" == "darwin" ]]; then
+  alias ls='ls'
+  alias ll='ls -all'
+  alias ld='ls -la | egrep "^d"'
+  alias lf='ls -la | egrep -v '^d''
+  alias lwd='ls -d */'
+  alias lrt='ls -lrt'
+elif [[ "$OS" == "linux" ]]; then
+  alias ls='ls --color=always'
+  alias ll='ls -all --color=always'
+  alias ld='ls -la --color=always | egrep "^d"'
+  alias lf='ls -la --color=always | egrep -v '^d''
+  alias lwd='ls -d */ --color=always '
+  alias lrt='ls -lrt --color=always '
+fi
 
 # Run command on all subdirs in dir
 function alldir {
