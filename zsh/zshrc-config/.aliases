@@ -10,7 +10,7 @@ alias lg='sudo nano /etc/locale.gen'
 alias h='nano /etc/hostname'
 alias fs='sudo nano /etc/fstab'
 alias r='source ~/.zshrc'
-alias z='nano ~/.zshrc'
+alias z='cd ~/dotfiles/zsh'
 alias killnode='killall node'
 alias www='cd /var/www'
 
@@ -33,7 +33,9 @@ alias droid="/opt/android-sdk/tools/android avd"
 # History
 function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
 
+# Create react app aliases
+alias react='create-react-app'
 
-#react-native aliases
+# React native aliases
 alias rns='react-native start'
 alias rna='react-native run-android'
