@@ -114,6 +114,7 @@ function settingsMenu {
   echo -e "$yellow 12\t $white\e[1mExtended"
   echo -e "$yellow 13\t $white\e[1mCloned"
   echo -e "$yellow 14\t $white\e[1mGraphics settings"
+  echo -e "$yellow 15\t $white\e[1mRandom wallpaper"
 
   echo -e "\n\e[0m Keyboard settings"
   echo -e "$yellow 21\t $white\e[1mUS"
@@ -150,6 +151,9 @@ function settingsOptions {
     ;;
     14)
     exec nvidia-settings
+    ;;
+    15)
+    exec feh --randomize --bg-scale $HOME/wallpaper/randomise/*
     ;;
     21)
     exec setxkbmap us
