@@ -149,7 +149,7 @@ function settingsOptions {
     exec terminator -x xrandr  --output LVDS-0 --auto --output HDMI-0--auto
     ;;
     14)
-    (nvidia-settings&> /dev/null &)
+    exec nvidia-settings
     ;;
     21)
     exec setxkbmap us
