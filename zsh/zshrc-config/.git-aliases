@@ -1,4 +1,4 @@
-# git
+# git &hub
 alias gpushm='git push origin master'
 alias gpullm='git pull origin master'
 alias gpullp='git pull origin gh-pages'
@@ -10,6 +10,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gpusho='git push oracle master'
 alias gpullo='git pull oracle master'
+alias gl='hub clone'
 
 function ga {
   git add $1;
