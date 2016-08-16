@@ -1,5 +1,3 @@
-
-
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
@@ -13,7 +11,9 @@ if [[ "$OS" == "darwin" ]]; then
   alias lf='ls -la | egrep -v '^d''
   alias lwd='ls -d */'
   alias lrt='ls -lrt'
+  alias p='cd ~/otissv/google-drive'
 elif [[ "$OS" == "linux" ]]; then
+  alias p='cd ~/google-drive/projects'
   alias ls='ls --color=always'
   alias ll='ls -all --color=always'
   alias ld='ls -la --color=always | egrep "^d"'
