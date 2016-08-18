@@ -32,6 +32,7 @@ alias droid="/opt/android-sdk/tools/android avd"
 
 # History
 function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+alias histclear='echo "" > ~/.histfile & exec $SHELL -l'
 
 # Create react app aliases
 alias react='create-react-app'
