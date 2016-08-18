@@ -5,8 +5,8 @@ source ~/dotfiles/zsh/.os
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=100
-SAVEHIST=100
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory nomatch notify
 unsetopt autocd beep extendedglob
 bindkey -e
