@@ -360,7 +360,7 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 exec --no-startup-id $wallpaper
 # exec --no-startup-id $cloud1
 # exec --no-startup-id $cloud2
-exec --no-startup-id $cloud3
+# exec --no-startup-id $cloud3
 # exec --no-startup-id $viber
 
 # application ---------------------------------------------------------------------------------------------------------------
