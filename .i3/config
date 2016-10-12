@@ -88,15 +88,15 @@ set $kindle                   deskopen $HOME/Desktop/kindle.desktop
 
 # system
 set $read                     $dot-path/read.md
-set $sound-card               $terminal-x bash $HOME/.asound-switcher
+set $sound-card               i3-sensible-terminal -x bash $HOME/.asound-switcher
 set $config                   $text-editor $dot-path
-set $sound-mixer              $terminal-x alsamixer
-set $wifi-menu                $terminal-x sudo wifi-menu wlp4s0
-set $system-monitor           $terminal-x top
+set $sound-mixer              i3-sensible-terminal -x alsamixer
+set $wifi-menu                i3-sensible-terminal -x  sudo wifi-menu wlp4s0
+set $system-monitor           i3-sensible-terminal -x  htop
 set $bluetooth-menu           blueman-manager
 set $audio                    pavucontrol
 set $control                  gnome-control-center;
-
+set $graphics                 nvidia-settings;
 
 #keyboard
 #Don't forget to change keyoard menu below!
@@ -304,25 +304,37 @@ bar {
 }
 
 
+# system -------------------------------------------------------------------------------------------------------------------------
+bindsym $acc+F2 exec $audio
+bindsym $acc+F3 exec $wifi-menu
+bindsym $acc+F4 exec $bluetooth-menu
+
+bindsym $acc+F5 exec $graphics
+bindsym $acc+F6 exec $system-monitor
+
+bindsym $acc+F9 exec $config
+bindsym $acc+F10 exec$wallpaper
+
+
 # display menu-------------------------------------------------------------------------------------------------------------------------
 
-set $display1 LVDS-0
-set $display2 HDMI-0
+#set $display1 LVDS-0
+#set $display2 HDMI-0
 
-set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) Extended, (4) Clone
+#set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) Extended, (4) Clone
 
-mode "$mode_display" {
-  bindsym 1 exec --no-startup-id $terminal-x xrandr --output $display1 --auto --output $display2 --off
-  bindsym 2 exec --no-startup-id $terminal-x xrandr --output $display1 --off --output $display2 --auto
-  bindsym 3 exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
-  bindsym 4 exec --no-startup-id $terminal-x xrandr  --output $display1 --auto --output $display2--auto
-  # back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
+#mode "$mode_display" {
+#  bindsym 1 exec --no-startup-id $terminal-x xrandr --output $display1 --auto --output $display2 --off
+#  bindsym 2 exec --no-startup-id $terminal-x xrandr --output $display1 --off --output $display2 --auto
+#  bindsym 3 exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
+#  bindsym 4 exec --no-startup-id $terminal-x xrandr  --output $display1 --auto --output $display2--auto
+#  # back to normal: Enter or Escape
+#  bindsym Return mode "default"
+#  bindsym Escape mode "default"
+#}
 
 # menu
-bindsym $mod+Shift+d mode "$mode_display"
+#bindsym $mod+Shift+d mode "$mode_display"
 
 
 # exit menu -------------------------------------------------------------------------------------------------------------------------
