@@ -28,7 +28,7 @@ alias ncm='ncmpcpp'
 alias apache='sudo systemctl start httpd'
 alias w='curl -4 http://wttr.in/Opole'
 alias droid="/opt/android-sdk/tools/android avd"
-
+alias hosts='sudo atom /etc/hosts'
 
 # History
 function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
