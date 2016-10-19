@@ -30,5 +30,6 @@ source ~/dotfiles/zsh/zshrc-config/.mamp-aliases
 source ~/dotfiles/zsh/zshrc-config/.nginx-aliases
 source ~/dotfiles/zsh/zshrc-config/.npm-aliases
 source ~/dotfiles/zsh/zshrc-config/.pacman-aliases
+source ~/dotfiles/zsh/zshrc-config/.rethinkdb-aliases
 source ~/dotfiles/zsh/zshrc-config/.trash-aliases
 source ~/dotfiles/zsh/zshrc-config/.vagrant-aliases
