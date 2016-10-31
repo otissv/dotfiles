@@ -33,3 +33,4 @@ source ~/dotfiles/zsh/zshrc-config/.pacman-aliases
 source ~/dotfiles/zsh/zshrc-config/.rethinkdb-aliases
 source ~/dotfiles/zsh/zshrc-config/.trash-aliases
 source ~/dotfiles/zsh/zshrc-config/.vagrant-aliases
+source ~/dotfiles/zsh/zshrc-config/.yarn-aliases

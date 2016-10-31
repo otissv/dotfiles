@@ -1,0 +1,34 @@
+#yarn
+alias yarni='yarn install'
+alias yarnflat='yarn install --flat'
+alias yarnif='yarn install --force'
+alias yarnprod='yarn install --production'
+
+alias yarna='yarn add'
+alias yarnad='yarn run add --dev'
+
+alias yarnr='yarn remove'
+alias yarnbin='yarn bin'
+alias yarnls='yarn ls'
+alias yarnpub='clear && yarn publish'
+
+alias yarnag='yarn global add'
+alias yarnrg='yarn global remove'
+alias yarnbing='yarn global bin'
+alias yarnlsg='yarn global ls'
+
+alias yarns='clear && yarn run start'
+alias yarnt='clear && yarn run test'
+alias yarntw='clear && yarn run test:watch'
+alias yarnts='clear && yarn run test:spec'
+alias yarnl='clear && yarn run lint'
+alias yarnlw='clear && yarn run lint:watch'
+alias yarnb='clear && yarn run build'
+alias yarnbw='clear && yarn run build:watch'
+alias yarnbt='clear && yarn run build && yarn run test'
+alias yarnu='clear && yarn upgrade'
+
+alias yarnalli='clear && alldir . yarn install'
+alias yarnallb='clear && alldir . yarn run build'
+alias yarnallt='clear && alldir . yarn run test'
+alias yarnallu='clear && alldir . yarn upgrade'
