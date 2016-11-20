@@ -26,3 +26,5 @@ alias npmallt='clear && alldir . npm run test'
 alias npmallu='clear && alldir . ncu upgrade -a'
 alias npmbt='npm run build && npm run test'
 alias npmp='npm run peer'
+
+alias npmh='HTTPS=true npm start'
