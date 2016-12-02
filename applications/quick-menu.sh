@@ -91,7 +91,6 @@ function appsMenu {
 function appOptions {
   case "$1" in
     1)
-    echo "hello"
     exec deskopen /home/ninja/Desktop/facebook.desktop
     ;;
     2)
@@ -124,6 +123,7 @@ function settingsMenu {
   echo -e "\n\e[0m Network settings"
   echo -e "$yellow 30\t $white\e[1mBluetooth"
   echo -e "$yellow 31\t $white\e[1mWifi"
+  echo -e "$yellow 32\t $white\e[1mLAN"
 
   echo -e "\n\e[0m Sound settings"
   echo -e "$yellow 40\t $white\e[1mMixer"
@@ -169,6 +169,9 @@ function settingsOptions {
     ;;
     31)
     exec terminator -x sudo wifi-menu
+    ;;
+    32)
+    exec terminator -x sudo systemctl enable dhcpcd@enp3s0f2.service
     ;;
     10)
     exec pavucontrol
