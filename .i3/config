@@ -46,57 +46,57 @@ set $ws9  9 
 set $ws10 10 
 
 # applications
+set $browser                  google-chrome-stable
+set $cddvd-burner             silicon
 set $cloud1                   dropbox
 set $cloud2                   hubic-gtk
 set $cloud3                   insync start
+set $code                     atom
+set $downloader               youtube-dl-gui
+set $file-manage2             nautilus
+set $file-manager             pcmanfm
+set $games                    steam
+set $gtk                      lxappearance
+set $image-editor             gimp
+set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
+set $music                    i3-sensible-terminal -x ncmpcpp
+set $office                   libreoffice
+set $screen-capture           scrot
+set $skype                    skype
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
-set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
-set $file-manager             pcmanfm
-set $file-manage2             nautilus
-set $browser                  google-chrome-stable
-set $office                   libreoffice
-set $torrent                  transmission-gtk
-set $video                    vlc
-set $music                    i3-sensible-terminal -x ncmpcpp
-set $games                    steam
-set $image-editor             gimp
-set $vector-editor            inkscape
-set $downloader               youtube-dl-gui
 set $text-editor              leafpad
-set $cddvd-burner             silicon
-set $skype                    skype
+set $torrent                  transmission-gtk
+set $vector-editor            inkscape
 set $viber                    viber
-set $gtk                      lxappearance
-set $screen-capture           scrot
+set $video                    vlc
 
 # Desktop shortcuts
-set $facebook                 deskopen $HOME/Desktop/facebook.desktop
+set $calandar                 deskopen $HOME/Desktop/calandar.desktop
 set $docs                     deskopen $HOME/Desktop/docs.desktop
-set $udemy                    deskopen $HOME/Desktop/udemy.desktop
-set $messenger                deskopen $HOME/Desktop/messenger.desktop
+set $facebook                 deskopen $HOME/Desktop/facebook.desktop
 set $inbox                    deskopen $HOME/Desktop/inbox.desktop
+set $keep                     deskopen $HOME/Desktop/keep.desktop
+set $kindle                   deskopen $HOME/Desktop/kindle.desktop
+set $messenger                deskopen $HOME/Desktop/messenger.desktop
 set $pinterest                deskopen $HOME/Desktop/pinterest.desktop
 set $pocket                   deskopen $HOME/Desktop/pocket.desktop
+set $trello                   deskopen $HOME/Desktop/trello.desktop
 set $tweetdeck                deskopen $HOME/Desktop/tweetdeck.desktop
 set $udemy                    deskopen $HOME/Desktop/udemy.desktop
+set $udemy                    deskopen $HOME/Desktop/udemy.desktop
 set $youtube                  deskopen $HOME/Desktop/youtube.desktop
-set $keep                     deskopen $HOME/Desktop/keep.desktop
-set $calandar                 deskopen $HOME/Desktop/calandar.desktop
-set $trello                   deskopen $HOME/Desktop/trello.desktop
-set $kindle                   deskopen $HOME/Desktop/kindle.desktop
 
 # system
+set $audio                    pavucontrol
+set $bluetooth-menu           blueman-manager
+set $config                   $text-editor $dot-path
+set $graphics                 nvidia-settings;
 set $read                     $dot-path/read.md
 set $sound-card               i3-sensible-terminal -x bash $HOME/.asound-switcher
-set $config                   $text-editor $dot-path
 set $sound-mixer              i3-sensible-terminal -x alsamixer
-set $wifi-menu                i3-sensible-terminal -x  sudo wifi-menu wlp4s0
 set $system-monitor           i3-sensible-terminal -x  htop
-set $bluetooth-menu           blueman-manager
-set $audio                    pavucontrol
-set $control                  gnome-control-center;
-set $graphics                 nvidia-settings;
+set $wifi-menu                i3-sensible-terminal -x  sudo wifi-menu wlp4s0
 
 #keyboard
 #Don't forget to change keyoard menu below!
@@ -368,35 +368,35 @@ bindsym $mod+Return exec $terminal
 
 bindsym $mod+F1 exec  $launcher
 bindsym $acc+space exec  i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
-bindsym $acc+b exec      $browser
-bindsym $acc+c exec      $control
 bindsym $acc+a exec      $audio
-bindsym $acc+x exec      $text-editor
-bindsym $acc+f exec      $file-manager
-bindsym $acc+n exec      $file-manage2
-bindsym $acc+g exec      $games
-bindsym $acc+p exec      $skype
-bindsym $acc+v exec      $video
+bindsym $acc+b exec      $browser
+bindsym $acc+c exec      $code
+bindsym $acc+d exec      $downloader
 bindsym $acc+e exec      $messenger
+bindsym $acc+f exec      $file-manager
+bindsym $acc+g exec      $games
 bindsym $acc+i exec      $image-editor
 bindsym $acc+k exec      $vector-editor
-bindsym $acc+o exec      $office
-bindsym $acc+d exec      $downloader
-bindsym $acc+t exec      $torrent
 bindsym $acc+m exec      $music
+bindsym $acc+n exec      $file-manage2
+bindsym $acc+o exec      $office
+bindsym $acc+p exec      $skype
+bindsym $acc+t exec      $torrent
+bindsym $acc+v exec      $video
+bindsym $acc+x exec      $text-editor
 
-bindsym $acc+Control+d exec $docs
-bindsym $acc+Control+u exec $udemy
-bindsym $acc+Control+m exec $messenger
-bindsym $acc+Control+i exec $inbox
-bindsym $acc+Control+p exec $pinterest
-bindsym $acc+Control+g exec $pocket
-bindsym $acc+Control+t exec $tweetdeck
-bindsym $acc+Control+y exec $youtube
-bindsym $acc+Control+k exec $keep
 bindsym $acc+Control+c exec $calandar
+bindsym $acc+Control+d exec $docs
+bindsym $acc+Control+g exec $pocket
+bindsym $acc+Control+i exec $inbox
+bindsym $acc+Control+k exec $keep
 bindsym $acc+Control+l exec $trello
+bindsym $acc+Control+m exec $messenger
+bindsym $acc+Control+p exec $pinterest
 bindsym $acc+Control+r exec $kindle
+bindsym $acc+Control+t exec $tweetdeck
+bindsym $acc+Control+u exec $udemy
+bindsym $acc+Control+y exec $youtube
 
 
 # Print Scrn ---------------------------------------------------------------------------------------------------------------
