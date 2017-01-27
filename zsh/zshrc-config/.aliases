@@ -15,6 +15,7 @@ alias www='cd /var/www'
 
 # Applications
 alias a='atom .'
+aliaq c.='code'
 alias s='subl3 .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'

@@ -51,13 +51,14 @@ set $cddvd-burner             silicon
 set $cloud1                   dropbox
 set $cloud2                   hubic-gtk
 set $cloud3                   insync start
-set $code                     atom
+set $code                     code
 set $downloader               youtube-dl-gui
 set $file-manage2             nautilus
 set $file-manager             pcmanfm
 set $games                    steam
 set $gtk                      lxappearance
 set $image-editor             gimp
+set $graphql                  graphql
 set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $music                    i3-sensible-terminal -x ncmpcpp
 set $office                   libreoffice
@@ -366,8 +367,8 @@ exec --no-startup-id $wallpaper
 # application ---------------------------------------------------------------------------------------------------------------
 bindsym $mod+Return exec $terminal
 
-bindsym $mod+F1 exec  $launcher
-bindsym $acc+space exec  i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
+bindsym $acc+space exec  $launcher
+bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
 bindsym $acc+a exec      $audio
 bindsym $acc+b exec      $browser
 bindsym $acc+c exec      $code
@@ -384,7 +385,7 @@ bindsym $acc+p exec      $skype
 bindsym $acc+t exec      $torrent
 bindsym $acc+v exec      $video
 bindsym $acc+x exec      $text-editor
-
+bindsym $acc+q exec      $graphql
 bindsym $acc+Control+c exec $calandar
 bindsym $acc+Control+d exec $docs
 bindsym $acc+Control+g exec $pocket

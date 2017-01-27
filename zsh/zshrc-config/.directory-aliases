@@ -14,8 +14,8 @@ if [[ "$OS" == "darwin" ]]; then
   alias p='cd ~/otissv/google-drive'
 elif [[ "$OS" == "linux" ]]; then
   alias p='cd ~/work/projects/'
-  alias pg='cd ~/google-drive/projects'
   alias rui='cd ~/work/projects/react-uikit-components'
+  alias sq='cd ~/work/projects/squadron'
   alias ls='ls --color=always'
   alias ll='ls -all --color=always'
   alias ld='ls -la --color=always | egrep "^d"'
@@ -40,4 +40,21 @@ function tc {
 
 function mkcd {
   mkdir $1 && cd $1
+}
+
+# moute sshfs core user
+function corefs {
+  mkdir -p /mnt/sshfs/$2
+  sshfs -o allow_other core@$1:/ /mnt/$2
+}
+
+# moute sshfs root user
+function rootfs {
+  mkdir -p /mnt/$2
+  sshfs -o allow_other root@$1:/ /mnt/$2
+}
+
+# ssh as core
+function sshcore {
+  ssh -A core@$1
 }

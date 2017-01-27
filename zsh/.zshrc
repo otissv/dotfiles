@@ -26,7 +26,6 @@ source ~/dotfiles/zsh/zshrc-config/.aliases
 source ~/dotfiles/zsh/zshrc-config/.directory-aliases
 source ~/dotfiles/zsh/zshrc-config/.git-aliases
 source ~/dotfiles/zsh/zshrc-config/.mamp-aliases
-source ~/dotfiles/zsh/zshrc-config/.mamp-aliases
 source ~/dotfiles/zsh/zshrc-config/.nginx-aliases
 source ~/dotfiles/zsh/zshrc-config/.npm-aliases
 source ~/dotfiles/zsh/zshrc-config/.pacman-aliases
