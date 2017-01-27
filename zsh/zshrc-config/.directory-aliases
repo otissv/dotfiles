@@ -45,13 +45,13 @@ function mkcd {
 # moute sshfs core user
 function corefs {
   mkdir -p /mnt/sshfs/$2
-  sshfs -o allow_other core@$1:/ /mnt/$2
+  sshfs -o allow_other core@$1:/ /mnt/sshfs/$2
 }
 
 # moute sshfs root user
 function rootfs {
-  mkdir -p /mnt/$2
-  sshfs -o allow_other root@$1:/ /mnt/$2
+  mkdir -p /mnt/sshfs/$2
+  sshfs -o allow_other root@$1:/ /mnt/sshfs/$2
 }
 
 # ssh as core
