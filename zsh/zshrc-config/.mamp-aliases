@@ -1,4 +1,9 @@
 alias htdocs='cd /Applications/MAMP/htdocs'
-alias mampsql='/Applications/MAMP/bin/apache2/bin/mysql'
+alias mampsql='/Applications/Mamp/Library/bin/mysql'
 alias mampdump='/Applications/MAMP/bin/apache2/bin/mysqldump'
 alias mampphp='/Applications/MAMP/bin/php/php5.6.2/bin/php'
+
+
+function mampi () {
+  /Applications/MAMP/bin/apache2/bin/mysql -u $1 -p $p < $1.sql
+}

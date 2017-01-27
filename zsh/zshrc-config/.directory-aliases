@@ -58,3 +58,8 @@ function rootfs {
 function sshcore {
   ssh -A core@$1
 }
+
+# unmount sshfs volume
+function usshfs {
+  sudo umount -f /mnt/sshfs/$1
+}
