@@ -2,6 +2,7 @@ alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
 alias mkdir="mkdir -p"
+alias cdsshfs='cd /mnt/sshfs/'
 
 
 if [[ "$OS" == "darwin" ]]; then
@@ -52,6 +53,7 @@ function corefs {
 function rootfs {
   mkdir -p /mnt/sshfs/$2
   sshfs -o allow_other root@$1:/ /mnt/sshfs/$2
+  cd /mnt/sshfs/$2
 }
 
 # ssh as core
