@@ -2,7 +2,6 @@ alias cd.='cd ..'
 alias cd..='cd ..'
 alias cd~='cd ~'
 alias mkdir="mkdir -p"
-alias cdsshfs='cd /mnt/sshfs/'
 
 
 if [[ "$OS" == "darwin" ]]; then
@@ -44,13 +43,13 @@ function mkcd {
 }
 
 # moute sshfs core user
-function corefs {
+function fscore {
   mkdir -p /mnt/sshfs/$2
   sshfs -o allow_other core@$1:/ /mnt/sshfs/$2
 }
 
 # moute sshfs root user
-function rootfs {
+function fsroot {
   mkdir -p /mnt/sshfs/$2
   sshfs -o allow_other root@$1:/ /mnt/sshfs/$2
   cd /mnt/sshfs/$2
@@ -60,6 +59,12 @@ function rootfs {
 function sshcore {
   ssh -A core@$1
 }
+
+# ssh as root
+function sshroot {
+  ssh root@$1
+}
+
 
 # unmount sshfs volume
 function usshfs {
