@@ -70,3 +70,12 @@ function sshroot {
 function usshfs {
   sudo umount -f /mnt/sshfs/$1
 }
+
+# copy
+function rcopy {
+  rsync -azP --progress $@
+}
+
+function copy {
+  rsync -vzP --progress $@
+}
