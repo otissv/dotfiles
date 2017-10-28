@@ -33,3 +33,8 @@ source ~/dotfiles/zsh/zshrc-config/.rethinkdb-aliases
 source ~/dotfiles/zsh/zshrc-config/.trash-aliases
 source ~/dotfiles/zsh/zshrc-config/.vagrant-aliases
 source ~/dotfiles/zsh/zshrc-config/.yarn-aliases
+
+# Go version manager
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

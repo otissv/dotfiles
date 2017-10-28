@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Pinterest
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://www.pinterest.com/
+Icon=chrome-glpcdlmagpenkpdgnjmfimanpcigbbhc-Default
+StartupWMClass=crx_glpcdlmagpenkpdgnjmfimanpcigbbhc

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Trello
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://trello.com/
+Icon=chrome-jijnmpkkfkjaihbhffejemnpbbglahim-Default
+StartupWMClass=crx_jijnmpkkfkjaihbhffejemnpbbglahim

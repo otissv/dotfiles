@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Udemy
+Exec=/opt/google/chrome/google-chrome --app=https://www.udemy.com/home/my-courses/learning/
+Icon=chrome-bnjgaggikmmmdfjcienbbbjhkcegnaei-Default
+StartupWMClass=crx_bnjgaggikmmmdfjcienbbbjhkcegnaei

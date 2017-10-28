@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Facebook
+Exec=/opt/google/chrome/google-chrome --app=https://m.facebook.com/
+Icon=chrome-https___m.facebook.com_
+StartupWMClass=m.facebook.com
+Name[en_US]=Facebook

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Google Calenda
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://calendar.google.com
+Icon=chrome-hjpceadhnpnpdelkidbjdmoodafopfkp-Default
+StartupWMClass=crx_hjpceadhnpnpdelkidbjdmoodafopfkp
+Name[en_US]=Google Calendar

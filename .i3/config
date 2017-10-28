@@ -59,11 +59,13 @@ set $games                    steam
 set $gtk                      lxappearance
 set $image-editor             gimp
 set $graphql                  graphql
-set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
+set $launcher                 ulauncher
+set $clipbaord                clipit
+#set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $music                    i3-sensible-terminal -x ncmpcpp
 set $office                   libreoffice
 set $screen-capture           scrot
-set $skype                    skype
+set $skype                    skypeforlinux
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
 set $text-editor              leafpad
@@ -114,48 +116,82 @@ assign [class="^Steam"]              $ws9
 
 for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
 
-# colors -----------------------------------------------------------------------------------------------------
+# old colors -----------------------------------------------------------------------------------------------------
+# ##1A5091
+# set $accent                   #3E8A1C
+
+# set $focused-bd               #424242
+# set $focused_inactive-bd      #2D2D2D
+# set $unfocused-bd             #222222
+# set $urgent-bd                #A5A5A5
+# set $background-bd            #161616
+
+# set $focused-bg               #424242
+# set $unfocused-bg             #151515
+# set $focused_inactive-bg      #151515
+# set $urgent-bg                #A5A5A5
+
+# set $focused-text             #E0E0E0
+# set $focused_inactive-text    #2D2D2D
+# set $unfocused-text           #605E56
+# set $urgent-text              #1E1E1E
+
+# set $focused-indicator        #E0E0E0
+
+# set $focused_workspace-bd     $accent
+# set $active_workspace-bd      #424242
+# set $inactive_workspace-bd    #2D2D2D
+# set $urgent_workspace-bd      #A5A5A5
+
+# set $focused_workspace-bg     $accent
+# set $active_workspace-bg      #424242
+# set $inactive_workspace-bg    #2D2D2D
+# set $urgent_workspace-bg      #A5A5A5
+
+# set $focused_workspace-text   #E0E0E0
+# set $active_workspace-text    #E0E0E0
+# set $inactive_workspace-text  #E0E0E0
+# set $urgent_workspace-text    #1E1E1E
+
+
+
+# color ==============================================================================================================
+
 ##1A5091
-set $accent                   #3E8A1C
+set $accent                   #000000
 
-set $focused-bd               #424242
-set $focused_inactive-bd      #2D2D2D
-set $unfocused-bd             #222222
-set $urgent-bd                #A5A5A5
-set $background-bd            #161616
+set $focused-bd               #000000
+set $focused_inactive-bd      #000000
+set $unfocused-bd             #000000`
+set $urgent-bd                #000000
+set $background-bd            #000000
 
-set $focused-bg               #424242
-set $unfocused-bg             #151515
-set $focused_inactive-bg      #151515
+set $focused-bg               #000000
+set $unfocused-bg             #000000
+set $focused_inactive-bg      #000000
 set $urgent-bg                #A5A5A5
 
-set $focused-text             #E0E0E0
-set $focused_inactive-text    #2D2D2D
-set $unfocused-text           #605E56
+set $focused-text             #55bf26
+set $focused_inactive-text    #E0E0E0
+set $unfocused-text           #E0E0E0
 set $urgent-text              #1E1E1E
 
 set $focused-indicator        #E0E0E0
 
-set $focused_workspace-bd     $accent
-set $active_workspace-bd      #424242
-set $inactive_workspace-bd    #2D2D2D
-set $urgent_workspace-bd      #A5A5A5
+set $focused_workspace-bd     #1E1E1E
+set $active_workspace-bd      #000000
+set $inactive_workspace-bd    #000000
+set $urgent_workspace-bd      #E0E0E0
 
 set $focused_workspace-bg     $accent
-set $active_workspace-bg      #424242
-set $inactive_workspace-bg    #2D2D2D
+set $active_workspace-bg      #000000
+set $inactive_workspace-bg    #000000
 set $urgent_workspace-bg      #A5A5A5
 
 set $focused_workspace-text   #E0E0E0
 set $active_workspace-text    #E0E0E0
 set $inactive_workspace-text  #E0E0E0
 set $urgent_workspace-text    #1E1E1E
-
-
-
-#==============================================================================================================
-
-
 
 # General -----------------------------------------------------------------------------------------------------
 # reload the configuration file
@@ -203,7 +239,7 @@ floating_modifier $mod
 bindsym $mod+Control+space floating toggle
 
 # change focus between tiling and floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # change focus
 bindsym $mod+Left focus left
@@ -292,6 +328,9 @@ bar {
   hidden_state hide
   modifier $mod
 
+  # show system tray on primary monotir
+  tray_output LVDS-0
+
   colors {
     background $focused_inactive-bg
     statusline $focused-text
@@ -317,25 +356,30 @@ bindsym $acc+F9 exec $config
 bindsym $acc+F10 exec$wallpaper
 
 
-# display menu-------------------------------------------------------------------------------------------------------------------------
+# display -------------------------------------------------------------------------------------------------------------------------
 
-#set $display1 LVDS-0
-#set $display2 HDMI-0
 
-#set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) Extended, (4) Clone
+# # bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
+# bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
+# # bindsym XF486Display exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
 
-#mode "$mode_display" {
-#  bindsym 1 exec --no-startup-id $terminal-x xrandr --output $display1 --auto --output $display2 --off
-#  bindsym 2 exec --no-startup-id $terminal-x xrandr --output $display1 --off --output $display2 --auto
-#  bindsym 3 exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
-#  bindsym 4 exec --no-startup-id $terminal-x xrandr  --output $display1 --auto --output $display2--auto
-#  # back to normal: Enter or Escape
-#  bindsym Return mode "default"
-#  bindsym Escape mode "default"
-#}
+
+set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) DP-0 only, (4) Extended, (5) Clone
+
+mode "$mode_display" {
+  bindsym 1 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
+  bindsym 2 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --auto --output DP-0 --off
+  bindsym 3 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --off --output DP-0 --auto
+  bindsym 4 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
+  bindsym 5 exec --no-startup-id  $terminal-x xrandr --output LVDS-0 --auto  --output HDMI-0 --auto --output DP-0 --auto
+
+# back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
 # menu
-#bindsym $mod+Shift+d mode "$mode_display"
+bindsym XF86Display mode "$mode_display"
 
 
 # exit menu -------------------------------------------------------------------------------------------------------------------------
@@ -359,13 +403,15 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 
 # autostart -------------------------------------------------------------------------------------------------------------------
 exec --no-startup-id $wallpaper
+exec --no-startup-id $launcher
+exec --no-startup-id $clipbaord
+exec --no-startup-id $skype
 # exec --no-startup-id $cloud1
 # exec --no-startup-id $cloud2
 # exec --no-startup-id $cloud3
-# exec --no-startup-id $viber
 
 # application ---------------------------------------------------------------------------------------------------------------
-bindsym $mod+Return exec $terminal
+bindsym $acc+Return exec $terminal
 
 bindsym $acc+space exec  $launcher
 bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
@@ -406,7 +452,7 @@ bindsym $acc+Control+y exec $youtube
 bindsym Print exec $screen-capture $HOME/pictures/screen_shoots/`date +%Y-%m-%d_%H:%M:%S`.png  | xclip
 
 # window screenshoot(Alt + PrnScr)
-bindsym Mod1+Print exec $screen-capture -u $HOME/pictures/screen_shoots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Print exec $screen-capture $HOME/pictures/screen_shoots/`date +%Y-%m-%d_%H:%M:%S`.png  | xclip
 
 # select windows screenshoot(Alt + Shift + PrnScr)
 bindsym Mod1+Shift+Print exec $screen-capture -s $HOME/pictures/screen_shoots/`date +%Y-%m-%d_%H:%M:%S`.png

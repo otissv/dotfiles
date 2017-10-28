@@ -14,6 +14,7 @@ if [[ "$OS" == "darwin" ]]; then
   alias p='cd ~/otissv/google-drive'
 elif [[ "$OS" == "linux" ]]; then
   alias p='cd ~/work/projects/'
+  alias pg='cd ~/work/projects/guru'
   alias rui='cd ~/work/projects/react-uikit-components'
   alias sq='cd ~/work/projects/squadron'
   alias ls='ls --color=always'
@@ -52,7 +53,7 @@ function fscore {
 function fsroot {
   mkdir -p /mnt/sshfs/$2
   sshfs -o allow_other root@$1:/ /mnt/sshfs/$2
-  cd /mnt/sshfs/$2
+  cd /mnt/$2
 }
 
 # ssh as core

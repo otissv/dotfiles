@@ -19,9 +19,9 @@ xset s off
 setxkbmap -layout us,gb -option grp:shift_shift_toggle
 
 # set networktable screen
-xinput map-to-output 15 HDMI-0
+xinput map-to-output 15 LVDS-0
 
-xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-3 --auto --left-of HDMI-0
+xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
 
 # switch on numlock
 numlockx &

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=TweetDeck
+Exec=/opt/google/chrome/google-chrome --app=https://tweetdeck.twitter.com/
+Icon=chrome-ddiddklncfgbfaaahngklemobghhjkim-Default
+StartupWMClass=crx_ddiddklncfgbfaaahngklemobghhjkim

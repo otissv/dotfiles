@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Google Docs
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://docs.google.com/document/u/0/?showDriveBanner=true#
+Icon=chrome-djphohapicejmpdkcdjpjeflcpnjniib-Default
+StartupWMClass=crx_djphohapicejmpdkcdjpjeflcpnjniib
+Name[en_US]=Google Docs
