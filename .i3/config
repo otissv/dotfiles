@@ -417,6 +417,7 @@ bindsym $acc+space exec  $launcher
 bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
 bindsym $acc+a exec      $audio
 bindsym $acc+b exec      $browser
+bindsym $acc+Control+b exec $browser --incognito
 bindsym $acc+c exec      $code
 bindsym $acc+d exec      $downloader
 bindsym $acc+e exec      $messenger

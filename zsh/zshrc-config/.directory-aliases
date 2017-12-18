@@ -27,6 +27,8 @@ fi
 
 # Run command on all subdirs in dir
 function alldir {
+  # alldir . rm -r node_modules 
+  
   # for D in $1*/; do $($@); done
   # find $1 -maxdepth 1 -type f
   cmd=${@:2};
@@ -79,4 +81,18 @@ function rcopy {
 
 function copy {
   rsync -vzP --progress $@
+}
+
+# change to a directory in the project directory 
+function cdp {
+ cd ~/work/projects/$1
+}
+
+# change to a directory in the  guru project directory 
+function gcode {
+ cd ~/work/projects/guru/codebase/$1
+}
+
+function gcodep {
+ cd ~/work/projects/guru/codebase/package$1
 }
