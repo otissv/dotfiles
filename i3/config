@@ -16,13 +16,14 @@ set $mod Mod1
 # Mod4 win (super) key
 set $acc Mod4
 
+
 # variables -------------------------------------------------------------------------------------------------------------------
 
 # font
-set $font Open Sans, Icons 10
+set $font Open Sans, Icons 14
 
 # path to location of i3exit
-set $exit $HOME/.i3/i3exit
+set $exit $HOME/.config/i3/i3exit
 
 # path to dotfiles
 set $dot-path $HOME/dotfiles
@@ -43,17 +44,14 @@ set $ws6  6 
 set $ws7  7 
 set $ws8  8 
 set $ws9  9 
-set $ws10 10 
+set $ws10 10 
 
 # applications
 set $browser                  google-chrome-stable
-set $cddvd-burner             silicon
-set $cloud1                   dropbox
-set $cloud2                   hubic-gtk
-set $cloud3                   insync start
-set $code                     code
+set $code                     code-oss
+set $dropbox                  dropbox
+set $hubic-gtk                hubic-gtk
 set $downloader               youtube-dl-gui
-set $file-manage2             nautilus
 set $file-manager             pcmanfm
 set $games                    steam
 set $gtk                      lxappearance
@@ -62,49 +60,36 @@ set $graphql                  graphql
 set $launcher                 ulauncher
 set $clipbaord                clipit
 #set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
-set $music                    i3-sensible-terminal -x ncmpcpp
+set $music                    rhythmbox
 set $office                   libreoffice
 set $screen-capture           scrot
 set $skype                    skypeforlinux
 set $terminal                 i3-sensible-terminal
 set $terminal-x               i3-sensible-terminal -x
-set $text-editor              leafpad
+set $text-editor              subl3
 set $torrent                  transmission-gtk
-set $vector-editor            inkscape
 set $viber                    viber
 set $video                    vlc
-
-# Desktop shortcuts
-set $calandar                 deskopen $HOME/Desktop/calandar.desktop
-set $docs                     deskopen $HOME/Desktop/docs.desktop
-set $facebook                 deskopen $HOME/Desktop/facebook.desktop
-set $inbox                    deskopen $HOME/Desktop/inbox.desktop
-set $keep                     deskopen $HOME/Desktop/keep.desktop
-set $kindle                   deskopen $HOME/Desktop/kindle.desktop
-set $messenger                deskopen $HOME/Desktop/messenger.desktop
-set $pinterest                deskopen $HOME/Desktop/pinterest.desktop
-set $pocket                   deskopen $HOME/Desktop/pocket.desktop
-set $trello                   deskopen $HOME/Desktop/trello.desktop
-set $tweetdeck                deskopen $HOME/Desktop/tweetdeck.desktop
-set $udemy                    deskopen $HOME/Desktop/udemy.desktop
-set $udemy                    deskopen $HOME/Desktop/udemy.desktop
-set $youtube                  deskopen $HOME/Desktop/youtube.desktop
+set $volume                   volumeicon
 
 # system
 set $audio                    pavucontrol
 set $bluetooth-menu           blueman-manager
+set $brightness               brightnessctl
 set $config                   $text-editor $dot-path
-set $graphics                 nvidia-settings;
-set $read                     $dot-path/read.md
-set $sound-card               i3-sensible-terminal -x bash $HOME/.asound-switcher
-set $sound-mixer              i3-sensible-terminal -x alsamixer
+set $display                  arandr-indicator 
+set $displaySettings          arandr
+set $graphics                 optirun -b none nvidia-settings -c :8
+set $keyboard                 qxkb
+set $network                  nm-applet
 set $system-monitor           i3-sensible-terminal -x  htop
-set $wifi-menu                i3-sensible-terminal -x  sudo wifi-menu wlp4s0
+set $volumecontrol            pactl
+#set $wifi-menu               i3-sensible-terminal -x  sudo wifi-menu wlp4s0
 
 #keyboard
 #Don't forget to change keyoard menu below!
-set $keyboard-layout1         us
-set $keyboard-layout2         gb
+set $keyboard-us              us
+set $keyboard-gb              gb
 
 
 
@@ -117,48 +102,47 @@ assign [class="^Steam"]              $ws9
 for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
 
 # old colors -----------------------------------------------------------------------------------------------------
-# ##1A5091
-# set $accent                   #3E8A1C
+#set $accent                   #000000
 
-# set $focused-bd               #424242
-# set $focused_inactive-bd      #2D2D2D
-# set $unfocused-bd             #222222
-# set $urgent-bd                #A5A5A5
-# set $background-bd            #161616
+#set $focused-bd               #000000
+#set $focused_inactive-bd      #000000
+#set $unfocused-bd             #000000`
+#set $urgent-bd                #000000
+#set $background-bd            #000000
 
-# set $focused-bg               #424242
-# set $unfocused-bg             #151515
-# set $focused_inactive-bg      #151515
-# set $urgent-bg                #A5A5A5
+#set $focused-bg               #000000
+#set $unfocused-bg             #000000
+#set $focused_inactive-bg      #000000
+#set $urgent-bg                #A5A5A5
 
-# set $focused-text             #E0E0E0
-# set $focused_inactive-text    #2D2D2D
-# set $unfocused-text           #605E56
-# set $urgent-text              #1E1E1E
+#set $focused-text             #55bf26
+#set $focused_inactive-text    #E0E0E0
+#set $unfocused-text           #E0E0E0
+#set $urgent-text              #1E1E1E
 
-# set $focused-indicator        #E0E0E0
+#set $focused-indicator        #E0E0E0
 
-# set $focused_workspace-bd     $accent
-# set $active_workspace-bd      #424242
-# set $inactive_workspace-bd    #2D2D2D
-# set $urgent_workspace-bd      #A5A5A5
+#set $focused_workspace-bd     #1E1E1E
+#set $active_workspace-bd      #000000
+#set $inactive_workspace-bd    #000000
+#set $urgent_workspace-bd      #E0E0E0
 
-# set $focused_workspace-bg     $accent
-# set $active_workspace-bg      #424242
-# set $inactive_workspace-bg    #2D2D2D
-# set $urgent_workspace-bg      #A5A5A5
+#set $focused_workspace-bg     $accent
+#set $active_workspace-bg      #000000
+#set $inactive_workspace-bg    #000000
+#set $urgent_workspace-bg      #A5A5A5
 
-# set $focused_workspace-text   #E0E0E0
-# set $active_workspace-text    #E0E0E0
-# set $inactive_workspace-text  #E0E0E0
-# set $urgent_workspace-text    #1E1E1E
+#set $focused_workspace-text   #E0E0E0
+#set $active_workspace-text    #E0E0E0
+#set $inactive_workspace-text  #E0E0E0
+#set $urgent_workspace-text    #1E1E1E
 
 
 
 # color ==============================================================================================================
 
 ##1A5091
-set $accent                   #000000
+set $accent                   #ea2525
 
 set $focused-bd               #000000
 set $focused_inactive-bd      #000000
@@ -171,7 +155,7 @@ set $unfocused-bg             #000000
 set $focused_inactive-bg      #000000
 set $urgent-bg                #A5A5A5
 
-set $focused-text             #55bf26
+set $focused-text             #ffffff
 set $focused_inactive-text    #E0E0E0
 set $unfocused-text           #E0E0E0
 set $urgent-text              #1E1E1E
@@ -227,7 +211,7 @@ bindsym $acc+BackSpace kill
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+F11 fullscreen
@@ -259,7 +243,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -271,7 +255,7 @@ mode "resize" {
   bindsym Left resize shrink width $resize px or $resize ppt
   bindsym Down resize grow height $resize px or $resize ppt
   bindsym Up resize shrink height $resize px or $resize ppt
-  bindsym Right resize grow width $resize px or $resize ppt
+  bindsym Right resize grow width $resize px or $resize ppt ke
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -329,7 +313,7 @@ bar {
   modifier $mod
 
   # show system tray on primary monotir
-  tray_output LVDS-0
+  tray_output primary
 
   colors {
     background $focused_inactive-bg
@@ -346,7 +330,7 @@ bar {
 
 # system -------------------------------------------------------------------------------------------------------------------------
 bindsym $acc+F2 exec $audio
-bindsym $acc+F3 exec $wifi-menu
+bindsym $acc+F3 exec $network
 bindsym $acc+F4 exec $bluetooth-menu
 
 bindsym $acc+F5 exec $graphics
@@ -356,30 +340,30 @@ bindsym $acc+F9 exec $config
 bindsym $acc+F10 exec$wallpaper
 
 
-# display -------------------------------------------------------------------------------------------------------------------------
+# # display -------------------------------------------------------------------------------------------------------------------------
 
 
-# # bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
-# bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
-# # bindsym XF486Display exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
+# # # bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
+# # bindsym XF86Display exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
+# # # bindsym XF486Display exec --no-startup-id $terminal-x bash ~/dotfiles/.i3/dedetect_displays.sh
 
 
-set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) DP-0 only, (4) Extended, (5) Clone
+# set $mode_display Display menu - (1) Built in only, (2) HDMI only, (3) DP-0 only, (4) Extended, (5) Clone
 
-mode "$mode_display" {
-  bindsym 1 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
-  bindsym 2 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --auto --output DP-0 --off
-  bindsym 3 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --off --output DP-0 --auto
-  bindsym 4 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
-  bindsym 5 exec --no-startup-id  $terminal-x xrandr --output LVDS-0 --auto  --output HDMI-0 --auto --output DP-0 --auto
+# mode "$mode_display" {
+#   bindsym 1 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --off --output DP-0 --off
+#   bindsym 2 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --auto --output DP-0 --off
+#   bindsym 3 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --off --output HDMI-0 --off --output DP-0 --auto
+#   bindsym 4 exec --no-startup-id $terminal-x xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
+#   bindsym 5 exec --no-startup-id  $terminal-x xrandr --output LVDS-0 --auto  --output HDMI-0 --auto --output DP-0 --auto
 
-# back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
+# # back to normal: Enter or Escape
+#   bindsym Return mode "default"
+#   bindsym Escape mode "default"
+# }
 
-# menu
-bindsym XF86Display mode "$mode_display"
+# # menu
+# bindsym Super_L  mode "$mode_display"
 
 
 # exit menu -------------------------------------------------------------------------------------------------------------------------
@@ -387,7 +371,7 @@ set $mode_exit Exit menu - (l) lock, (e) logout, (s) suspend, (h) hibernate, (r)
 
 mode "$mode_exit" {
   bindsym l exec --no-startup-id $exit lock, mode "default"
-  bindsym e exec --no-startup-id $exit logout, mode "default"
+  bindsym e exec --no-startup-id killall intel-virtual-output && $exit logout, mode "default"
   bindsym s exec --no-startup-id $exit suspend, mode "default"
   bindsym h exec --no-startup-id $exit hibernate, mode "default"
   bindsym r exec --no-startup-id $exit reboot, mode "default"
@@ -405,9 +389,13 @@ bindsym $mod+Control+Delete mode "$mode_exit"
 exec --no-startup-id $wallpaper
 exec --no-startup-id $launcher
 exec --no-startup-id $clipbaord
-exec --no-startup-id $skype
-# exec --no-startup-id $cloud1
-# exec --no-startup-id $cloud2
+exec --no-startup-id $keyboard
+exec --no-startup-id $network
+exec --no-startup-id $volume
+exec --no-startup-id $display
+# skype
+exec --no-startup-id $dropbox
+# exec --no-startup-id $hubic-gtk
 # exec --no-startup-id $cloud3
 
 # application ---------------------------------------------------------------------------------------------------------------
@@ -420,32 +408,13 @@ bindsym $acc+b exec      $browser
 bindsym $acc+Control+b exec $browser --incognito
 bindsym $acc+c exec      $code
 bindsym $acc+d exec      $downloader
-bindsym $acc+e exec      $messenger
+# bindsym $acc+e exec      $messenger
 bindsym $acc+f exec      $file-manager
 bindsym $acc+g exec      $games
-bindsym $acc+i exec      $image-editor
-bindsym $acc+k exec      $vector-editor
 bindsym $acc+m exec      $music
-bindsym $acc+n exec      $file-manage2
-bindsym $acc+o exec      $office
-bindsym $acc+p exec      $skype
 bindsym $acc+t exec      $torrent
 bindsym $acc+v exec      $video
 bindsym $acc+x exec      $text-editor
-bindsym $acc+q exec      $graphql
-bindsym $acc+Control+c exec $calandar
-bindsym $acc+Control+d exec $docs
-bindsym $acc+Control+g exec $pocket
-bindsym $acc+Control+i exec $inbox
-bindsym $acc+Control+k exec $keep
-bindsym $acc+Control+l exec $trello
-bindsym $acc+Control+m exec $messenger
-bindsym $acc+Control+p exec $pinterest
-bindsym $acc+Control+r exec $kindle
-bindsym $acc+Control+t exec $tweetdeck
-bindsym $acc+Control+u exec $udemy
-bindsym $acc+Control+y exec $youtube
-
 
 # Print Scrn ---------------------------------------------------------------------------------------------------------------
 
@@ -460,10 +429,16 @@ bindsym Mod1+Shift+Print exec $screen-capture -s $HOME/pictures/screen_shoots/`d
 
 
 # Volume controls ---------------------------------------------------------------------------------------------------------------
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym XXF86AudioRaiseVolume exec --no-startup-id $volumecontrol set-sink-volume 1 +5%
+bindsym XXF86AudioLowerVolume exec --no-startup-id $volumecontrol set-sink-volume 1 -5%
+bindsym XF86AudioMutes exec --no-startup-id $volumecontrol set-sink-mute 1 toggle
 
+# Brightness---------------------------------------------------------------------------------------------------------------
+bindsym XF86MonBrightnessDown exec --no-startup-id $brightness set 10%- 
+bindsym XF86MonBrightnessUp exec --no-startup-id $brightness set +10% 
+
+# Display ---------------------------------------------------------------------------------------------------------------
+# bindsym bindsym $mod+P exec --no-startup-id arandr
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a

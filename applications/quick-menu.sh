@@ -122,8 +122,7 @@ function settingsMenu {
 
   echo -e "\n\e[0m Network settings"
   echo -e "$yellow 30\t $white\e[1mBluetooth"
-  echo -e "$yellow 31\t $white\e[1mWifi"
-  echo -e "$yellow 32\t $white\e[1mLAN"
+  echo -e "$yellow 31\t $white\e[1mNetwork"
 
   echo -e "\n\e[0m Sound settings"
   echo -e "$yellow 40\t $white\e[1mMixer"
@@ -168,10 +167,9 @@ function settingsOptions {
     exec blue-manager
     ;;
     31)
-    exec terminator -x sudo wifi-menu
+    exec terminator -x sudo nmtui
     ;;
     32)
-    exec terminator -x sudo systemctl enable dhcpcd@enp3s0f2.service
     ;;
     10)
     exec pavucontrol

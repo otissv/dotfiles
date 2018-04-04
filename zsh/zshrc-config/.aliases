@@ -19,8 +19,6 @@ alias c.='code'
 alias s='subl3 .'
 alias wm='sudo wifi-menu wlp4s0'
 alias sf='screenfetch'
-alias fm='ranger'
-alias sfm='sudo ranger'
 alias bs='browser-sync start --server --files "**/*.*"'
 
 alias ncm='ncmpcpp'

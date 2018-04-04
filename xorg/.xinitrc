@@ -19,13 +19,18 @@ xset s off
 setxkbmap -layout us,gb -option grp:shift_shift_toggle
 
 # set networktable screen
-xinput map-to-output 15 LVDS-0
 
-xrandr --output LVDS-0 --auto --output HDMI-0 --auto --left-of LVDS-0 --output DP-0 --auto --right-of LVDS-0
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
 
 # switch on numlock
 numlockx &
 
+#usb automount
+udiskie &
+
+# mutple monitors
+intel-virtual-output &
 # launch i3
 exec i3
 #exec gnome-session

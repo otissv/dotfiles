@@ -13,10 +13,8 @@ if [[ "$OS" == "darwin" ]]; then
   alias lrt='ls -lrt'
   alias p='cd ~/otissv/google-drive'
 elif [[ "$OS" == "linux" ]]; then
-  alias p='cd ~/work/projects/'
-  alias pg='cd ~/work/projects/guru'
-  alias rui='cd ~/work/projects/react-uikit-components'
-  alias sq='cd ~/work/projects/squadron'
+  alias p='cd ~/projects/'
+  alias pg='cd ~/projects/guru'
   alias ls='ls --color=always'
   alias ll='ls -all --color=always'
   alias ld='ls -la --color=always | egrep "^d"'
@@ -85,14 +83,14 @@ function copy {
 
 # change to a directory in the project directory 
 function cdp {
- cd ~/work/projects/$1
+ cd ~/Dropbox/projects/$1
 }
 
 # change to a directory in the  guru project directory 
 function gcode {
- cd ~/work/projects/guru/codebase/$1
+ cd ~/Dropbox/projects/guru/codebase/$1
 }
 
 function gcodep {
- cd ~/work/projects/guru/codebase/package$1
+ cd ~/Dropbox/projects/guru/codebase/packages/$1
 }
