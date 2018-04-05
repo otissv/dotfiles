@@ -13,8 +13,9 @@ if [[ "$OS" == "darwin" ]]; then
   alias lrt='ls -lrt'
   alias p='cd ~/otissv/google-drive'
 elif [[ "$OS" == "linux" ]]; then
-  alias p='cd ~/projects/'
-  alias pg='cd ~/projects/guru'
+  alias p='cd ~/Dropbox/projects/'
+  alias pg='cd ~/Dropbox/projects/guru'
+  alias pt='cd ~/Dropbox/projects/themed-styled-components'
   alias ls='ls --color=always'
   alias ll='ls -all --color=always'
   alias ld='ls -la --color=always | egrep "^d"'
