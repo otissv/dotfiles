@@ -10,7 +10,7 @@ case "$1" in
         lock
         ;;
     logout)
-        i3-msg exit
+        sudo killall instruments || true && i3-msg exit
         ;;
     suspend)
         lock; systemctl suspend

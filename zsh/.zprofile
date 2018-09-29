@@ -8,3 +8,4 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$PATH:$HOME/.yarn/bin"
 export NODE_ENV=dev
+export ELECTRON_TRASH=gio

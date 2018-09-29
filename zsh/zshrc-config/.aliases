@@ -28,6 +28,7 @@ alias droid="/opt/android-sdk/tools/android avd"
 alias hosts='sudo atom /etc/hosts'
 alias redis='(redis-server &); redis-commander'
 
+alias droidemu='/opt/android-sdk/emulator/emulator -avd Nexus_5X_API_28_x86'
 
 # History
 function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
@@ -37,5 +38,7 @@ alias histclear='echo "" > ~/.histfile & exec $SHELL -l'
 alias react='create-react-app'
 
 # React native aliases
+alias reactn='create-react-native-app'
 alias rns='react-native start'
 alias rna='react-native run-android'
+alias npma='npm run android'

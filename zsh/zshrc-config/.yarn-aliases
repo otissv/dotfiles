@@ -4,8 +4,9 @@ alias yarnflat='yarn install --flat'
 alias yarnif='yarn install --force'
 alias yarnprod='yarn install --production'
 
-alias yarna='yarn add'
-alias yarnad='yarn run add --dev'
+alias yarnd='yarn --dev'
+alias yarng='yarn add --ignore-workspace-root-check'
+alias yarngd='yarn add --dev --ignore-workspace-root-check'
 
 alias yarnr='yarn remove'
 alias yarnbin='yarn bin'
@@ -32,3 +33,5 @@ alias yarnalli='clear && alldir . yarn install'
 alias yarnallb='clear && alldir . yarn run build'
 alias yarnallt='clear && alldir . yarn run test'
 alias yarnallu='clear && alldir . yarn upgrade'
+
+

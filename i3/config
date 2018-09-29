@@ -69,7 +69,7 @@ set $terminal-x               i3-sensible-terminal -x
 set $text-editor              subl3
 set $torrent                  transmission-gtk
 set $viber                    viber
-set $video                    vlc
+set $video                    gnome-mplayer
 set $volume                   volumeicon
 
 # system
@@ -329,16 +329,15 @@ bar {
 
 
 # system -------------------------------------------------------------------------------------------------------------------------
-bindsym $acc+F2 exec $audio
-bindsym $acc+F3 exec $network
-bindsym $acc+F4 exec $bluetooth-menu
 
+bindsym $acc+F2 exec $audio
+bindsym $acc+F4 exec $bluetooth-menu
 bindsym $acc+F5 exec $graphics
 bindsym $acc+F6 exec $system-monitor
-
 bindsym $acc+F9 exec $config
 bindsym $acc+F10 exec$wallpaper
-
+bindsym $acc+l exec  i3lock -i  $HOME/.i3/lock.png
+bindsym $acc+Return exec $terminal
 
 # # display -------------------------------------------------------------------------------------------------------------------------
 
@@ -394,27 +393,26 @@ exec --no-startup-id $network
 exec --no-startup-id $volume
 exec --no-startup-id $display
 # skype
-exec --no-startup-id $dropbox
+# exec --no-startup-id $dropbox
 # exec --no-startup-id $hubic-gtk
 # exec --no-startup-id $cloud3
 
 # application ---------------------------------------------------------------------------------------------------------------
-bindsym $acc+Return exec $terminal
 
-bindsym $acc+space exec  $launcher
-bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
+# bindsym $acc+e exec      $messenger
 bindsym $acc+a exec      $audio
 bindsym $acc+b exec      $browser
-bindsym $acc+Control+b exec $browser --incognito
 bindsym $acc+c exec      $code
+bindsym $acc+Control+b exec $browser --incognito
 bindsym $acc+d exec      $downloader
-# bindsym $acc+e exec      $messenger
 bindsym $acc+f exec      $file-manager
 bindsym $acc+g exec      $games
 bindsym $acc+m exec      $music
+bindsym $acc+space exec  $launcher
 bindsym $acc+t exec      $torrent
 bindsym $acc+v exec      $video
 bindsym $acc+x exec      $text-editor
+bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
 
 # Print Scrn ---------------------------------------------------------------------------------------------------------------
 
@@ -434,8 +432,8 @@ bindsym XXF86AudioLowerVolume exec --no-startup-id $volumecontrol set-sink-volum
 bindsym XF86AudioMutes exec --no-startup-id $volumecontrol set-sink-mute 1 toggle
 
 # Brightness---------------------------------------------------------------------------------------------------------------
-bindsym XF86MonBrightnessDown exec --no-startup-id $brightness set 10%- 
-bindsym XF86MonBrightnessUp exec --no-startup-id $brightness set +10% 
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- 
+#bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +10%
 
 # Display ---------------------------------------------------------------------------------------------------------------
 # bindsym bindsym $mod+P exec --no-startup-id arandr

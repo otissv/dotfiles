@@ -38,3 +38,6 @@ source ~/dotfiles/zsh/zshrc-config/.yarn-aliases
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# OPAM configuration
+. /home/ninja/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

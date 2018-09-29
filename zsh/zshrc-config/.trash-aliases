@@ -1,9 +1,9 @@
 if [[ "$OS" == "darwin" ]]; then
-  function rm () { trash "$@" }
-  function rs () { trash "$@" }
-  function rl () { trash -l }
+  function trm () { trash "$@" }
+  function trs () { trash "$@" }
+  function trl () { trash -l }
 elif [[ "$OS" == "linux" ]]; then
-  function rm () { trash-put $* }
-  function rs () { trash-restore $* }
-  function rl () { trash-list $* }
+  function trm () { trash-put $* }
+  function trs () { trash-restore $* }
+  function trl () { trash-list $* }
 fi
