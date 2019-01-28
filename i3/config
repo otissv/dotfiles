@@ -29,7 +29,8 @@ set $exit $HOME/.config/i3/i3exit
 set $dot-path $HOME/dotfiles
 
 # path to wallpapers
-set $wallpaper feh --randomize --bg-scale $HOME/wallpaper/randomise/*
+set $wallpaper feh --randomize --bg-scale $HOME/wallpaper/laptop/*
+# set $wallpaper exec --no-startup-id nitrogen --restore
 
 # resize px/ppt
 set $resize 1
@@ -57,7 +58,7 @@ set $games                    steam
 set $gtk                      lxappearance
 set $image-editor             gimp
 set $graphql                  graphql
-set $launcher                 ulauncher
+set $launcher                 albert #ulauncher
 set $clipbaord                clipit
 #set $launcher                 dmenu_extended_run -i -p 'Arch Linux >>' -fn 'Roboto:pixelsize=30'  -nb '#111111' -nf '#999999' -sb '#111111' -sf '#D34836'
 set $music                    rhythmbox
@@ -84,6 +85,8 @@ set $keyboard                 qxkb
 set $network                  nm-applet
 set $system-monitor           i3-sensible-terminal -x  htop
 set $volumecontrol            pactl
+set $battery                  i3-battery-popup
+set $rgb-keyboard             ckb-next
 #set $wifi-menu               i3-sensible-terminal -x  sudo wifi-menu wlp4s0
 
 #keyboard
@@ -370,7 +373,7 @@ set $mode_exit Exit menu - (l) lock, (e) logout, (s) suspend, (h) hibernate, (r)
 
 mode "$mode_exit" {
   bindsym l exec --no-startup-id $exit lock, mode "default"
-  bindsym e exec --no-startup-id killall intel-virtual-output && $exit logout, mode "default"
+  bindsym e exec --no-startup-id intel-virtual-output && $exit logout, mode "default"
   bindsym s exec --no-startup-id $exit suspend, mode "default"
   bindsym h exec --no-startup-id $exit hibernate, mode "default"
   bindsym r exec --no-startup-id $exit reboot, mode "default"
@@ -392,6 +395,8 @@ exec --no-startup-id $keyboard
 exec --no-startup-id $network
 exec --no-startup-id $volume
 exec --no-startup-id $display
+exec --no-startup-id $battery -L 15 -l 5
+exec --no-startup-id $rgb-keyboard
 # skype
 # exec --no-startup-id $dropbox
 # exec --no-startup-id $hubic-gtk
@@ -413,7 +418,8 @@ bindsym $acc+t exec      $torrent
 bindsym $acc+v exec      $video
 bindsym $acc+x exec      $text-editor
 bindsym $mod+F1 exec     i3-sensible-terminal -x $HOME/dotfiles/applications/quick-menu.sh
-
+bindsym $acc+o exec      $battery -L 15 -l 5
+bindsym $acc+k exec      $rgb-keyboard
 # Print Scrn ---------------------------------------------------------------------------------------------------------------
 
 # fullscreen screenshoot (PrnScr)
