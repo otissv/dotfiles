@@ -48,7 +48,8 @@ set $ws9  9 
 set $ws10 10 
 
 # applications
-set $browser                  google-chrome-stable
+set $browser                  firefox-developer-edition
+set $browser2                 google-chrome-stable
 set $code                     code-oss
 set $dropbox                  dropbox
 set $hubic-gtk                hubic-gtk
@@ -407,8 +408,10 @@ exec --no-startup-id $rgb-keyboard
 # bindsym $acc+e exec      $messenger
 bindsym $acc+a exec      $audio
 bindsym $acc+b exec      $browser
+bindsym $acc+Control+b exec $browser -private
 bindsym $acc+c exec      $code
-bindsym $acc+Control+b exec $browser --incognito
+bindsym $acc+n exec      $browser2
+bindsym $acc+Control+n exec $browser2 --incognito
 bindsym $acc+d exec      $downloader
 bindsym $acc+f exec      $file-manager
 bindsym $acc+g exec      $games

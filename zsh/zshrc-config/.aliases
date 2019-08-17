@@ -35,10 +35,14 @@ function hist() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; f
 alias histclear='echo "" > ~/.histfile & exec $SHELL -l'
 
 # Create react app aliases
-alias react='create-react-app'
+alias react='npx create-react-app'
 
 # React native aliases
 alias reactn='create-react-native-app'
 alias rns='react-native start'
 alias rna='react-native run-android'
 alias npma='npm run android'
+
+
+# Reason React
+alias 'reason=bsb -theme react-hooks -init'
