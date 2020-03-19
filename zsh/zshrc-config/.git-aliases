@@ -1,27 +1,25 @@
-# git &hub
-alias gpushm='git push origin master'
-alias gpullm='git pull origin master'
-alias gpullp='git pull origin gh-pages'
-alias gpushp='git push origin gh-pages'
-alias gpulld='git pull origin dev'
-alias gpushd='git push origin dev'
-alias gr='git reset --soft HEAD~1'
-alias gs='git status'
-alias gd='git diff'
-alias gpusho='git push oracle master'
-alias gpullo='git pull oracle master'
-alias gl='hub clone'
+# git & hub
+alias gitpushm='git push origin master'
+alias gitpullm='git pull origin master'
+alias gitpullp='git pull origin gh-pages'
+alias gitpushp='git push origin gh-pages'
+alias gitpulld='git pull origin dev'
+alias gitpushd='git push origin dev'
+alias gitr='git reset --soft HEAD~1'
+alias gits='git status'
+alias gitd='git diff'
+alias gitcl='hub clone'
 
-function ga {
+function gita {
   git add $1;
   git commit -m $2;
 }
 
-function gc {
+function gitc {
   git commit -m $1
 }
 
-function gb {
+function gitb {
     case $1 in
       -b)
         git checkout -b $2;
@@ -55,18 +53,18 @@ function gb {
     esac
 }
 
-function gremote {
+function gitremote {
   git remote add origin https://github.com/otissv/${PWD##*/}
 }
 
-function grchange {
+function gitrchange {
   git remote set-url origin https://github.com/otissv/${PWD##*/}
 }
 
-function gcreate {
+function gitcreate {
   hub create $1
 }
 
-function gfetch {
+function gitfetch {
  hub fetch $1
 }

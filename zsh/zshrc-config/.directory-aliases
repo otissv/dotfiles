@@ -4,28 +4,42 @@ alias cd~='cd ~'
 alias mkdir="mkdir -p"
 
 
-if [[ "$OS" == "darwin" ]]; then
-  alias ls='ls'
-  alias ll='ls -all'
-  alias ld='ls -la | egrep "^d"'
-  alias lf='ls -la | egrep -v '^d''
-  alias lwd='ls -d */'
-  alias lrt='ls -lrt'
-  alias p='cd ~/otissv/google-drive'
-elif [[ "$OS" == "linux" ]]; then
-  alias cds='cd /mnt/Storage'
-  alias p='cd /mnt/Storage/Projects/'
-  alias cdpgs='cd /mnt/Storage/Projects/guru/packages/guru-server'
-  alias guru='cd /mnt/Storage/Projects/guru'
-  alias guruide='cd /mnt/Storage/Projects/guru-ide'
-  alias pt='cd /mnt/Storage/Projects/themed-styled-components'
-  alias ls='ls --color=always'
-  alias ll='ls -all --color=always'
-  alias ld='ls -la --color=always | egrep "^d"'
-  alias lf='ls -la --color=always | egrep -v '^d''
-  alias lwd='ls -d */ --color=always '
-  alias lrt='ls -lrt --color=always '
-fi
+# if [[ "$OS" == "darwin" ]]; then
+#   alias ls='ls'
+#   alias ll='ls -all'
+#   alias ld='ls -la | egrep "^d"'
+#   alias lf='ls -la | egrep -v '^d''
+#   alias lwd='ls -d */'
+#   alias lrt='ls -lrt'
+#   alias p='cd ~/otissv/google-drive'
+#   alias p='cd ~/Projects/'
+#   alias labguru='cd ~/Projects/labguru'
+#   alias guruide='cd ~/Projects/guru/packages/guru-ide'
+# elif [[ "$OS" == "linux" ]]; then
+#   alias cds='cd /mnt/Storage'
+#   alias p='cd /mnt/Storage/Projects/'
+#   alias labguru='cd /mnt/Storage/Projects/labguru'
+#   alias guruide='cd /mnt/Storage/Projects/guru/packages/guru-ide'
+#   alias ls='ls --color=always'
+#   alias ll='ls -all --color=always'
+#   alias ld='ls -la --color=always | egrep "^d"'
+#   alias lf='ls -la --color=always | egrep -v '^d''
+#   alias lwd='ls -d */ --color=always '
+#   alias lrt='ls -lrt --color=always '
+# fi
+
+alias ls='ls'
+alias ll='ls -all'
+alias ld='ls -la | egrep "^d"'
+alias lf='ls -la | egrep -v '^d''
+alias lwd='ls -d */'
+alias lrt='ls -lrt'
+alias p='cd ~/Projects/Personal'
+alias w='~/Projects/Work'
+
+alias heyweb='~/Projects/Work/heyCar/web-app'
+alias heyui='~/Projects/Work/heyCar/heycar-ui'
+alias heylead='~/Projects/Work/heyCar/leads-app'
 
 # Run command on all subdirs in dir
 function alldir {

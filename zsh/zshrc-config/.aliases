@@ -46,3 +46,10 @@ alias npma='npm run android'
 
 # Reason React
 alias 'reason=bsb -theme react-hooks -init'
+
+#Prettier config
+{"semi": false,"printWidth": 80,"tabWidth": 2}
+
+function prc {
+  echo '{"semi": false,"printWidth": 80,"tabWidth": 2}' > .prettierrc
+}
