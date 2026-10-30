@@ -1,0 +1,6 @@
+{
+  "theme": "builtin://dark",
+  "file_explorer": {
+    "show_hidden": true
+  }
+}
