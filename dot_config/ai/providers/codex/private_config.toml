@@ -1,0 +1,17 @@
+[projects."/home/ninja/Projects/membased"]
+trust_level = "trusted"
+
+[projects."/home/ninja/Projects/learn-odin/sdl3"]
+trust_level = "trusted"
+
+[projects."/home/ninja/Projects/365-cms"]
+trust_level = "trusted"
+
+[projects."/home/ninja/Projects/state-verse/main"]
+trust_level = "trusted"
+
+[tui]
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 3

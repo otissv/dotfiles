@@ -1,0 +1,6 @@
+# Bundled rules. Rule id = guideline id in guidelines.md.
+# JavaScript files are parsed with the tsx grammar, so the js-ts rules cover .js/.jsx/.mjs/.cjs too.
+ruleDirs:
+  - rules
+languageGlobs:
+  tsx: ["*.js", "*.jsx", "*.mjs", "*.cjs"]

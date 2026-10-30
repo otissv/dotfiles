@@ -1,0 +1,31 @@
+id: needless-wrapper.ts
+language: typescript
+message: Function only forwards its arguments to another function. Candidate for inlining; check the guideline's Do not apply when list. See guideline needless-wrapper.
+severity: hint
+metadata:
+  autofix: none
+  guideline: needless-wrapper
+note: Matches only when parameters and arguments are textually identical, so typed parameters are not matched; the agent pass covers those.
+rule:
+  any:
+    - pattern: "function $F($$$A) { return $G($$$A) }"
+    - pattern: const $F = ($$$A) => $G($$$A)
+  not:
+    inside:
+      kind: export_statement
+---
+id: needless-wrapper.tsx
+language: tsx
+message: Function only forwards its arguments to another function. Candidate for inlining; check the guideline's Do not apply when list. See guideline needless-wrapper.
+severity: hint
+metadata:
+  autofix: none
+  guideline: needless-wrapper
+note: Matches only when parameters and arguments are textually identical, so typed parameters are not matched; the agent pass covers those.
+rule:
+  any:
+    - pattern: "function $F($$$A) { return $G($$$A) }"
+    - pattern: const $F = ($$$A) => $G($$$A)
+  not:
+    inside:
+      kind: export_statement

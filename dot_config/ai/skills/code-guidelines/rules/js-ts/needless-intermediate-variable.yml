@@ -1,0 +1,39 @@
+id: needless-intermediate-variable.ts
+language: typescript
+message: Variable assigned and immediately returned. Return the expression. See guideline needless-intermediate-variable.
+severity: hint
+metadata:
+  autofix: assisted
+  guideline: needless-intermediate-variable
+rule:
+  kind: lexical_declaration
+  pattern: const $X = $E
+  precedes:
+    pattern: return $X
+constraints:
+  X:
+    kind: identifier
+fix:
+  template: return $E;
+  expandEnd:
+    pattern: return $X
+---
+id: needless-intermediate-variable.tsx
+language: tsx
+message: Variable assigned and immediately returned. Return the expression. See guideline needless-intermediate-variable.
+severity: hint
+metadata:
+  autofix: assisted
+  guideline: needless-intermediate-variable
+rule:
+  kind: lexical_declaration
+  pattern: const $X = $E
+  precedes:
+    pattern: return $X
+constraints:
+  X:
+    kind: identifier
+fix:
+  template: return $E;
+  expandEnd:
+    pattern: return $X

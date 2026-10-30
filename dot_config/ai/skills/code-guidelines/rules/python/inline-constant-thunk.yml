@@ -1,0 +1,31 @@
+id: inline-constant-thunk.py
+language: python
+message: Constant wrapped in a function with no parameters. Use the value and change calls f() to f. See guideline inline-constant-thunk.
+severity: warning
+metadata:
+  autofix: assisted
+  guideline: inline-constant-thunk
+rule:
+  any:
+    - pattern: "$F = lambda: $L"
+    - kind: function_definition
+      pattern: |
+        def $F():
+            return $L
+  not:
+    any:
+      - inside:
+          kind: decorated_definition
+      - inside:
+          kind: class_definition
+          stopBy: end
+constraints:
+  L:
+    any:
+      - kind: integer
+      - kind: float
+      - kind: string
+      - kind: "true"
+      - kind: "false"
+      - kind: none
+fix: $F = $L

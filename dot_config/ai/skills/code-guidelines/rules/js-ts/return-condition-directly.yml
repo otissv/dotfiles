@@ -1,0 +1,43 @@
+id: return-condition-directly.ts
+language: typescript
+message: Returns true/false from a condition. Return the condition (wrap in Boolean() if it may not be boolean). See guideline return-condition-directly.
+severity: hint
+metadata:
+  autofix: safe
+  guideline: return-condition-directly
+rule:
+  any:
+    - pattern: "if ($C) { return true } else { return false }"
+    - pattern: if ($C) return true; else return false;
+    - all:
+        - any:
+            - pattern: "if ($C) { return true }"
+            - pattern: if ($C) return true
+        - precedes:
+            pattern: return false
+fix:
+  template: return Boolean($C);
+  expandEnd:
+    pattern: return false
+---
+id: return-condition-directly.tsx
+language: tsx
+message: Returns true/false from a condition. Return the condition (wrap in Boolean() if it may not be boolean). See guideline return-condition-directly.
+severity: hint
+metadata:
+  autofix: safe
+  guideline: return-condition-directly
+rule:
+  any:
+    - pattern: "if ($C) { return true } else { return false }"
+    - pattern: if ($C) return true; else return false;
+    - all:
+        - any:
+            - pattern: "if ($C) { return true }"
+            - pattern: if ($C) return true
+        - precedes:
+            pattern: return false
+fix:
+  template: return Boolean($C);
+  expandEnd:
+    pattern: return false
